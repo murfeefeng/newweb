@@ -1,265 +1,216 @@
 @font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?scqoe9');
-  src:  url('fonts/icomoon.eot?scqoe9#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?scqoe9') format('truetype'),
-    url('fonts/icomoon.woff?scqoe9') format('woff'),
-    url('fonts/icomoon.svg?scqoe9#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?pw2s0j');
+    src: url('fonts/icomoon.eot?pw2s0j#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?pw2s0j') format('truetype'), url('fonts/icomoon.woff?pw2s0j') format('woff'), url('fonts/icomoon.svg?pw2s0j#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.icon-i_media_app:before {
+    content: "\e910";
+}
+
+.icon-i_media_fb:before {
+    content: "\e911";
+}
+
+.icon-i_media_ig:before {
+    content: "\e912";
 }
 
 .icon-i_media_line:before {
-  content: "\e93c";
+    content: "\e913";
 }
+
 .icon-i_media_shop:before {
-  content: "\e93d";
+    content: "\e914";
 }
-.icon-i_media_ig:before {
-  content: "\e93e";
-}
-.icon-i_media_fb:before {
-  content: "\e93f";
-}
-.icon-i_media_app:before {
-  content: "\e940";
-}
-.icon-i_tag:before {
-  content: "\e939";
-}
+
 .icon-i_address:before {
-  content: "\e900";
+    content: "\e900";
 }
+
 .icon-i_airplane:before {
-  content: "\e901";
+    content: "\e901";
 }
+
 .icon-i_bag:before {
-  content: "\e902";
+    content: "\e902";
 }
+
 .icon-i_big_bag:before {
-  content: "\e903";
+    content: "\e903";
 }
+
 .icon-i_big_bonus1:before {
-  content: "\e904";
+    content: "\e904";
 }
+
 .icon-i_big_bonus2:before {
-  content: "\e905";
+    content: "\e905";
 }
+
 .icon-i_big_member_new:before {
-  content: "\e906";
+    content: "\e906";
 }
+
 .icon-i_big_member_old:before {
-  content: "\e907";
+    content: "\e907";
 }
+
 .icon-i_big_store:before {
-  content: "\e908";
+    content: "\e908";
 }
+
 .icon-i_cake:before {
-  content: "\e909";
+    content: "\e909";
 }
+
 .icon-i_cart:before {
-  content: "\e90a";
+    content: "\e90a";
 }
+
 .icon-i_comment:before {
-  content: "\e90b";
+    content: "\e90b";
 }
+
 .icon-i_delivery:before {
-  content: "\e90c";
+    content: "\e90c";
 }
+
 .icon-i_detail:before {
-  content: "\e90d";
+    content: "\e90d";
 }
+
 .icon-i_down:before {
-  content: "\e90e";
+    content: "\e90e";
 }
-.icon-i_fliter .path1:before {
-  content: "\e90f";
-  color: rgb(50, 51, 51);
+
+.icon-i_filter:before {
+    content: "\e90f";
 }
-.icon-i_fliter .path2:before {
-  content: "\e910";
-  margin-left: -1em;
-  color: rgb(50, 51, 51);
-}
-.icon-i_fliter .path3:before {
-  content: "\e911";
-  margin-left: -1em;
-  color: rgb(50, 51, 51);
-}
-.icon-i_fliter .path4:before {
-  content: "\e912";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-i_fliter .path5:before {
-  content: "\e913";
-  margin-left: -1em;
-  color: rgb(50, 51, 51);
-}
-.icon-i_fliter .path6:before {
-  content: "\e914";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-i_fliter .path7:before {
-  content: "\e915";
-  margin-left: -1em;
-  color: rgb(50, 51, 51);
-}
-.icon-i_fliter .path8:before {
-  content: "\e916";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-i_fliter .path9:before {
-  content: "\e917";
-  margin-left: -1em;
-  color: rgb(50, 51, 51);
-}
+
 .icon-i_forget:before {
-  content: "\e918";
+    content: "\e915";
 }
+
 .icon-i_gift:before {
-  content: "\e919";
+    content: "\e916";
 }
+
 .icon-i_gotop:before {
-  content: "\e91a";
+    content: "\e917";
 }
+
 .icon-i_hand:before {
-  content: "\e91b";
+    content: "\e918";
 }
+
 .icon-i_hanger:before {
-  content: "\e91c";
+    content: "\e919";
 }
+
 .icon-i_hat:before {
-  content: "\e91d";
+    content: "\e91a";
 }
+
 .icon-i_heart:before {
-  content: "\e91e";
+    content: "\e91b";
 }
+
 .icon-i_info:before {
-  content: "\e91f";
+    content: "\e91c";
 }
+
 .icon-i_lock:before {
-  content: "\e920";
+    content: "\e91d";
 }
+
 .icon-i_marker:before {
-  content: "\e921";
+    content: "\e91e";
 }
+
 .icon-i_member:before {
-  content: "\e922";
+    content: "\e91f";
 }
+
 .icon-i_menu:before {
-  content: "\e923";
+    content: "\e920";
 }
+
 .icon-i_notice:before {
-  content: "\e924";
+    content: "\e921";
 }
+
 .icon-i_okay:before {
-  content: "\e925";
+    content: "\e922";
 }
+
 .icon-i_open:before {
-  content: "\e926";
+    content: "\e923";
 }
-.icon-i_Payment .path1:before {
-  content: "\e927";
-  color: rgb(255, 255, 255);
+
+.icon-i_Payment:before {
+    content: "\e924";
 }
-.icon-i_Payment .path2:before {
-  content: "\e928";
-  margin-left: -0.93359375em;
-  color: rgb(50, 51, 51);
-}
-.icon-i_Payment .path3:before {
-  content: "\e929";
-  margin-left: -0.93359375em;
-  color: rgb(255, 255, 255);
-}
-.icon-i_Payment .path4:before {
-  content: "\e92a";
-  margin-left: -0.93359375em;
-  color: rgb(50, 51, 51);
-}
-.icon-i_Payment .path5:before {
-  content: "\e92b";
-  margin-left: -0.93359375em;
-  color: rgb(255, 255, 255);
-}
-.icon-i_Payment .path6:before {
-  content: "\e92c";
-  margin-left: -0.93359375em;
-  color: rgb(50, 51, 51);
-}
-.icon-i_Payment .path7:before {
-  content: "\e92d";
-  margin-left: -0.93359375em;
-  color: rgb(255, 255, 255);
-}
-.icon-i_Payment .path8:before {
-  content: "\e92e";
-  margin-left: -0.93359375em;
-  color: rgb(50, 51, 51);
-}
-.icon-i_Payment .path9:before {
-  content: "\e92f";
-  margin-left: -0.93359375em;
-  color: rgb(255, 255, 255);
-}
-.icon-i_Payment .path10:before {
-  content: "\e930";
-  margin-left: -0.93359375em;
-  color: rgb(50, 51, 51);
-}
-.icon-i_Payment .path11:before {
-  content: "\e931";
-  margin-left: -0.93359375em;
-  color: rgb(50, 51, 51);
-}
+
 .icon-i_phone:before {
-  content: "\e932";
+    content: "\e925";
 }
+
 .icon-i_reload:before {
-  content: "\e933";
+    content: "\e926";
 }
+
 .icon-i_remind .path1:before {
-  content: "\e934";
-  color: rgb(50, 51, 51);
+    content: "\e927";
+    color: rgb(50, 51, 51);
 }
+
 .icon-i_remind .path2:before {
-  content: "\e935";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
+    content: "\e928";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
 }
+
 .icon-i_remind .path3:before {
-  content: "\e936";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
+    content: "\e929";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
 }
+
 .icon-i_search:before {
-  content: "\e937";
+    content: "\e92a";
 }
+
 .icon-i_shipping:before {
-  content: "\e938";
+    content: "\e92b";
 }
+
+.icon-i_tag:before {
+    content: "\e92c";
+}
+
 .icon-i_t-shirt:before {
-  content: "\e93a";
+    content: "\e92d";
 }
+
 .icon-i_xx:before {
-  content: "\e93b";
+    content: "\e92e";
 }
