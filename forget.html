@@ -329,27 +329,47 @@
             </div>
 
         </div>
+        <a href="https://www.polylulu.com.tw/" class="sp_event_BN"></a>
     </header>
     <!-- Main Content op -->
     <div id="mainArea" class="pageIn pageLogin">
         <section class="boxPwReset">
-            <h1 class="basicTitle">PASSWORD RETRIEVE<span>忘記密碼</span></h1>
+            <h1 class="basicTitle">FORGET PASSWORD<span>忘記密碼</span></h1>
             <div class="bigIcon"><u class="icon-i_big_store"></u></div>
             <div class="form-group">
-                <p class="mb-4">請輸入您加入會員使用的【E-Mail帳號】，系統會自動將密碼寄到您的信箱，收件主旨為【Polylulu:網路會員密碼通知函】，請記得收信查看喔 !</p>
-                <input class="form-control" type="email" placeholder="E-MAIL">
+                <p class="mb-1">若您已忘記密碼，請依照以下流程進行重設密碼 :
+                </p>
+                <ol class="num_list mb-5">
+                    <li>請填寫您的【會員帳號EMAIL】，並點選【獲取驗證碼】，系統將會寄送驗證碼到您的EMAIL信箱。</li>
+                    <li>請於限定時間內，回填正確的驗證碼，確保您的會員身分，並可重新設定您的密碼。</li>
+                </ol>
+                <input class="form-control" type="email" placeholder="請輸入會員帳號EMAIL">
             </div>
-            <a href="" class="btn btn-primary d-block">GET PASSWORD 取得密碼</a>
-        </section>
-        <section class="boxNewMember">
-            <h1 class="basicTitle">NEW CUSTOMER<span>第一次購物</span></h1>
-            <div class="bigIcon"><u class="icon-i_big_bag"></u></div>
-            <div class="text-center">
-                <p>直接購物免註冊!!</p>
-                <p>訂購完成填寫收件資料</p>
-                <p>系統自動將您升級為會員</p>
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="text" id="resetPW" class="form-control" placeholder="請輸入驗證碼" aria-label="請輸入驗證碼" aria-describedby="basic-addon2" disabled>
+                    <div class="input-group-append">
+                        <!-- <button class="btn btn-primary" type="button" onclick="settime(this)">獲取驗證碼</button> -->
+                        <input type="button" id="removeID" class="btn btn-primary" value="獲取驗證碼" onclick="settime(this)" />
+                    </div>
+                </div>
             </div>
-            <a href="shoppingcart.html" class="btn btn-primary d-block mt-5">SHOP NOW 直接購物</a>
+
+            <button type="button" class="btn btn-primary w-100 disabled" id="confirmBtn" disabled>OK 確認</button>
+
+            <div id="resetPWinput" class="mt-5">
+                <h1 class="basicTitle">RESET PASSWORD<span>重設密碼</span></h1>
+                <div class="form-group">
+                    <input id="pw1" class="form-control resetPWinput" type="password" placeholder="設定新密碼">
+                    <small class="text-muted"><u class="icon-i_hand mr-1"></u>8-16英數字組合，須注意大小寫，不含特殊字元</small>
+                </div>
+                <div class="form-group">
+                    <input id="pw1" class="form-control resetPWinput" placeholder="新密碼確認">
+                </div>
+
+                <button type="button" class="btn btn-primary w-100" id="OKBtn">OK 確認重設密碼</button>
+            </div>
+
         </section>
     </div>
 
@@ -454,5 +474,54 @@
 <script src="./Source/js/zh-cht/vendor/jquery.magnific-popup.min.js"></script>
 <script src="./Source/js/zh-cht/vendor/sticky-sidebar.min.js"></script>
 <script src="./Source/js/zh-cht/main.js"></script>
+<script>
+    //獲取驗證碼
+    var countdown = 120;
+    var memberID = false;
+
+    $('#resetPWinput').hide();
+
+    function settime(obj) {
+
+        if (memberID === true) {
+            alert('此帳號已綁定至第三方登入(Facebook / Sign in with Apple) ，請以第三方登入即可，如有疑問請洽客服。');
+            return;
+        }
+
+        if (countdown == 0) {
+            obj.removeAttribute("disabled");
+            obj.value = "獲取驗證碼";
+            countdown = 60;
+            return;
+        } else {
+            $('#resetPW').attr("disabled", false);
+            obj.setAttribute("disabled", true);
+            obj.value = countdown + "s 後重試";
+            countdown--;
+        }
+
+        setTimeout(function() {
+
+            settime(obj)
+        }, 1000)
+
+
+    }
+
+    //核對驗證碼
+    $('#resetPW').bind("input propertychange", function() {
+        if ($('#resetPW').val().length === 6) {
+            $('#confirmBtn').removeClass('disabled').attr('data-target', '#delaccount').attr('disabled', false);
+        } else {
+            $('#confirmBtn').addClass('disabled').attr('data-target', '');
+        }
+    })
+
+
+    //確認驗證碼 出現重設密碼欄位
+    $('#confirmBtn').on('click', function() {
+        $('#resetPWinput').fadeIn(300);
+    });
+</script>
 
 </html>

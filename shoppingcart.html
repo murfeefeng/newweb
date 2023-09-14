@@ -7,17 +7,288 @@
     <title>PolyLulu</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link href="./Source/css/zh-cht/vendor/animate.css" rel="stylesheet" />
-    <link href="./Source/css/zh-cht/fonts/fontawesome/all.css" rel="stylesheet" />
-    <link href="./Source/css/zh-cht/fonts/icomoon/icons.css" rel="stylesheet" />
+    <link href="./Source/css/zh-cht/vendor/animate.css?20201012" rel="stylesheet" />
+    <link href="./Source/css/zh-cht/fonts/fontawesome/all.min.css?20201012" rel="stylesheet" />
+    <link href="./Source/css/zh-cht/fonts/icomoon/icons.css?20201012" rel="stylesheet" />
     <link href="./Source/css/zh-cht/vendor/slick.css" rel="stylesheet" />
     <link href="./Source/css/zh-cht/vendor/slick-theme.css" rel="stylesheet" />
+    <link href="./Source/css/zh-cht/vendor/magnific-popup.all.min.css" rel="stylesheet" />
     <link href="./Source/css/zh-cht/vendor/magnific-popup.css" rel="stylesheet" />
-    <link href="./Source/css/zh-cht/main.css" rel="stylesheet" />
+    <link href="./Source/css/zh-cht/main.css?20201012" rel="stylesheet" />
+    <script src="./Source/js/zh-cht/vendor/jquery.sticky-sidebar.min.js"></script>
     <script src="./Source/js/zh-cht/vendor/jquery-3.3.1.min.js?20190506"></script>
 </head>
 
 <body class="body_white">
+    <!-- 蓋版 op -->
+    <style>
+        .modal-dialog {
+            max-width: fit-content;
+            margin-top: calc(50vh - 300px);
+            /*視窗高度/2 - 圖片高度/2*/
+        }
+        
+        .modal-content {
+            background: transparent;
+            border: 0;
+        }
+        
+        .modal-body {
+            padding: 0;
+        }
+        
+        .modal-body>button.close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 99;
+        }
+        
+        @media screen and (max-width: 767px) {
+            .modal-dialog {
+                margin-top: calc(50vh - 55vw);
+                ;
+                /*視窗高度/2 - 圖片高度/2*/
+            }
+            #popup-default .modal-dialog {
+                max-width: 80%;
+            }
+            .poppic {
+                max-width: 100%;
+            }
+        }
+    </style>
+    <div id="adModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <!-- Copy Coupon op-->
+                    <div class="copyCode">
+                        <style>
+                            /*copyCoupon*/
+                            
+                            .coupon_item {
+                                position: relative;
+                            }
+                            
+                            .coupon_item a {
+                                display: block;
+                            }
+                            
+                            .copyCoupon_wrap {
+                                width: 100%;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                text-align: center;
+                                /* display: flex; */
+                                margin-top: 465px;
+                                /* margin-left: 50px; */
+                                padding: 0 30px 0 50px;
+                                /* border: 1px solid #00f; */
+                            }
+                            
+                            .copyCoupon {
+                                position: relative;
+                                width: 100%;
+                                text-align: center;
+                                padding: 0 .5em;
+                                /* border: 1px solid #00f; */
+                            }
+                            
+                            .copyCoupon input {
+                                width: 70%;
+                                height: 36px;
+                                margin-left: -21px;
+                                color: #fdfffe;
+                                background-color: #cc4647;
+                                border: 0;
+                                text-align: center;
+                                padding: .5em 0;
+                                font-size: 16px;
+                                font-family: 'Times New Roman', Times, serif !important;
+                                font-family: 'Century Gothic', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+                                font-weight: bold;
+                                /* border-radius: 12px; */
+                                opacity: 0;
+                                /* border: 1px solid #f00; */
+                            }
+                            
+                            .copyCoupon.code02 input {
+                                margin-top: 12px;
+                                margin-right: 44px;
+                            }
+                            
+                            .copyCoupon.code03 input {
+                                /* border: 1px solid #f00; */
+                                margin-top: 12px;
+                                margin-right: 16px;
+                            }
+                            
+                            .btn_copy {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: 999;
+                                width: 100%;
+                                height: 100px;
+                                margin-top: 0;
+                                background-color: transparent;
+                                color: #efefef;
+                                cursor: pointer;
+                                font-size: 24px;
+                                font-family: 'Times New Roman', Times, serif !important;
+                                font-family: 'Century Gothic', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+                                font-weight: bold;
+                                border: 0;
+                                /* border: 1px solid #f00; */
+                            }
+                            
+                            .btn_copy:focus {
+                                outline: none;
+                            }
+                            
+                            .code02 .btn_copy {
+                                margin-left: 133px;
+                            }
+                            
+                            .code03 .btn_copy {
+                                margin-left: 164px;
+                            }
+                            
+                            @media screen and (max-width: 767px) {
+                                .copyCoupon_wrap {
+                                    margin-top: 80.4vw;
+                                    /* border: 1px solid #00f; */
+                                }
+                                .copyCoupon input {
+                                    left: 11.8vw;
+                                    width: 60%;
+                                    height: 1.7em;
+                                    margin-top: 7.85vw;
+                                    color: #fdfffe;
+                                    background-color: #cc4647;
+                                    border: 0;
+                                    padding: .5em 0;
+                                    font-size: 15px;
+                                    opacity: 0;
+                                    /* border: 1px solid #000; */
+                                }
+                                .btn_copy {
+                                    /* width: 100%; */
+                                    height: 25vw;
+                                    /* background-color: transparent; */
+                                    color: #efefef;
+                                    cursor: pointer;
+                                    font-size: 24px;
+                                    /* border: 1px solid #f00; */
+                                }
+                            }
+                            
+                            @media screen and (max-width: 375px) {
+                                .copyCoupon_wrap {
+                                    margin-top: 80.2vw;
+                                    /* border: 1px solid #00f; */
+                                }
+                            }
+                            
+                            @media screen and (max-width: 320px) {
+                                /* iphone5/SE */
+                                .copyCoupon_wrap {
+                                    margin-top: 80.5vw;
+                                }
+                                .copyCoupon input {
+                                    left: 9.2vw;
+                                    width: 65%;
+                                    margin-top: 6.2vw;
+                                    font-size: 13px;
+                                }
+                            }
+                        </style>
+                        <div class="coupon_item">
+                            <a href="https://www.polylulu.com.tw/PDList2.asp?keyword=pim:2203010001&OB=D3">
+                                <img src="https://photo.polylulu.com.tw/photo/act/coupon/20220307/event-20220307-pc.jpg" class="poppic show4pc">
+                                <img src="https://photo.polylulu.com.tw/photo/act/coupon/20220307/event-20220307-m.jpg" class="poppic show4sm"></a>
+                            <div class="copyCoupon_wrap">
+                                <div class="copyCoupon code01">
+                                    <input type="text" value="819150" id="myInput">
+                                    <button class="btn_copy" onclick="copyCoupon()"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            //複製折扣碼
+                            var copyText = document.getElementById("myInput");
+                            var copyText1 = document.getElementById("myInput1");
+                            var copyText2 = document.getElementById("myInput2");
+
+                            var arrayCopy = [copyText, copyText1, copyText2];
+                            var arrayStr = ["819150", "819150", "819150"];
+
+                            $(".code01").val(arrayStr[0]);
+                            $(".code02").val(arrayStr[1]);
+                            $(".code03").val(arrayStr[2]);
+
+                            function copyEvent(e) {
+                                arrayCopy[e].select();
+                                arrayCopy[e].setSelectionRange(0, 99999)
+                                document.execCommand("copy");
+                                arrayCopy[e].setAttribute("value", "複製成功!");
+                                arrayCopy[e].setAttribute("style", "opacity: 1;");
+
+
+                                function test() {
+                                    arrayCopy[e].setAttribute("value", arrayStr[e]);
+                                    arrayCopy[e].setAttribute("style", "");
+                                }
+
+                                setTimeout(test, 2000);
+
+                            }
+
+                            function copyCoupon() {
+                                copyEvent(0);
+                            }
+
+                            function copyCoupon1() {
+                                copyEvent(1);
+                            }
+
+                            function copyCoupon2() {
+                                copyEvent(2);
+                            }
+                        </script>
+                    </div>
+                    <!-- Copy Coupon ed-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 蓋版 ed -->
+    <div id="goTopMenu">
+        <ul class="goTop_pc">
+            <li>
+                <a title="" href="https://www.facebook.com/PolyLuluTW/" target="_blank"><i class="icon"><u class="icon-i_media_fb"></u></i><span>FACEBOOK</span></a>
+            </li>
+            <li>
+                <a title="" href="https://www.instagram.com/polylulu_tw/" target="_blank"><i class="icon"><u class="icon-i_media_ig"></u></i><span>INSTAGRAM</span></a>
+            </li>
+            <li>
+                <a title="" href="https://line.me/R/ti/p/%40aal2550w" target="_blank"><i class="icon"><u class="icon-i_media_line"></u></i><span>LINE</span></a>
+            </li>
+            <li>
+                <a title="" href="store.html" target="_blank"><i class="icon"><u class="icon-i_media_shop"></u></i><span>STORE</span></a>
+            </li>
+            <li>
+                <a title="" href="" target="_blank"></a><i class="icon"><u class="icon-i_media_app"></u></i><span>POLYLULU APP</span></a>
+            </li>
+            <li>
+                <a title="" href="" class="goTop"><i class="icon"><u class="icon-i_gotop"></u></i><span>TOP</span></a>
+            </li>
+        </ul>
+        <a title="" href="" class="goTop goTop_m"><i class="icon"><u class="icon-i_gotop"></u></i><span>TOP</span></a>
+    </div>
     <header>
         <div class="wrap">
             <a title="" href="default.html" class="logo">
@@ -56,6 +327,9 @@
                                     <div class="menu_in">
                                         <div class="wrap">
                                             <ul>
+                                                <li>
+                                                    <div class="menu_tit">風格企劃</div>
+                                                </li>
                                                 <li><a title="" href="style.html" target="_self">BARBAPAPA泡泡先生</a></li>
                                                 <li><a title="" href="style.html" target="_self">冬季大勢LOOK</a></li>
                                                 <li><a title="" href="style.html" target="_self">丹寧派對</a></li>
@@ -66,7 +340,64 @@
                                                 <li><a title="" href="style.html" target="_self">下身顯瘦系列</a></li>
                                                 <li><a title="" href="style.html" target="_self">浪漫婚禮</a></li>
                                             </ul>
-                                            <a title="" href="style.html" class="menu_pic"><img src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/Banner/07.jpg" alt="" title=""></a>
+                                            <a title="" href="style.html" class="menu_pic"><img src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/Banner/07.jpg" title="" alt=""></a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="navDott">．</li>
+                                <li class="polyStyle pdAll">
+                                    <a title="" href="productlist.html"><span>ALL</span><b>全館商品</b></a>
+                                    <div class="menu_in">
+                                        <div class="wrap">
+                                            <ul>
+                                                <li>
+                                                    <div class="menu_tit">上衣TOP</div>
+                                                </li>
+                                                <li><a href="PDList2.asp?cid=111100&ob=D3" target="_self">上衣全系列</a></li>
+                                                <li><a href="PDList2.asp?cid=111102&ob=D3" target="_self">雪紡</a></li>
+                                                <li><a href="PDList2.asp?cid=111104&ob=D3" target="_self">襯衫</a></li>
+                                                <li><a href="PDList2.asp?cid=111101&ob=D3" target="_self">T恤</a></li>
+                                                <li><a href="PDList2.asp?cid=111110&ob=D3" target="_self">針織/毛衣</a></li>
+                                                <li><a href="PDList2.asp?cid=111103&ob=D3" target="_self">背心/小可愛</a></li>
+                                            </ul>
+                                            <ul>
+                                                <li>
+                                                    <div class="menu_tit">洋裝DRESS</div>
+                                                </li>
+                                                <li><a href="PDList2.asp?cid=112200&ob=D3" target="_self">洋裝全系列</a></li>
+                                                <li><a href="PDList2.asp?cid=112207&ob=D3" target="_self">牛仔洋裝</a></li>
+                                                <li><a href="PDList2.asp?cid=112227&ob=D3" target="_self">短袖洋裝</a></li>
+                                                <li><a href="PDList2.asp?cid=112231&ob=D3" target="_self">長洋裝</a></li>
+                                            </ul>
+                                            <ul>
+                                                <li>
+                                                    <div class="menu_tit">褲子BOTTOMS</div>
+                                                </li>
+                                                <li><a href="PDList2.asp?cid=226600&ob=D3" target="_self">褲子全系列</a></li>
+                                                <li><a href="PDList2.asp?cid=226622&ob=D3" target="_self">短褲</a></li>
+                                                <li><a href="PDList2.asp?cid=226623&ob=D3" target="_self">長褲</a></li>
+                                                <li><a href="PDList2.asp?cid=226632&ob=D3" target="_self">牛仔褲</a></li>
+                                                <li><a href="PDList2.asp?cid=226624&ob=D3" target="_self">安全褲/內搭褲</a></li>
+                                                <li><a href="PDList2.asp?cid=226628&ob=D3" target="_self">連身褲</a></li>
+                                            </ul>
+
+                                            <ul>
+                                                <li>
+                                                    <div class="menu_tit">裙子SKIRTS</div>
+                                                </li>
+                                                <li><a href="PDList2.asp?cid=225500&ob=D3" target="_self">裙子全系列</a></li>
+                                                <li><a href="PDList2.asp?cid=225525&ob=D3" target="_self">短裙</a></li>
+                                                <li><a href="PDList2.asp?cid=225526&ob=D3" target="_self">長裙</a></li>
+                                                <li><a href="PDList2.asp?cid=225507&ob=D3" target="_self">牛仔裙</a></li>
+                                                <li><a href="PDList2.asp?cid=339900&ob=D3" target="_self">配件</a></li>
+                                            </ul>
+                                            <ul>
+                                                <li>
+                                                    <div class="menu_tit">外套OUTER</div>
+                                                </li>
+                                                <li><a href="PDList2.asp?cid=113300&ob=D3" target="_self">外套全系列</a></li>
+                                            </ul>
+                                            <a title="" href="style.html" class="menu_pic"><img src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/Banner/07.jpg" title="" alt=""></a>
                                         </div>
                                     </div>
                                 </li>
@@ -99,8 +430,8 @@
                     <div class="nav_top">
                         <span>MENU </span>
                         <span class="btnClose">
-                            <i class="icon"><u class="icon-i_xx"></u></i>
-                        </span>
+							<i class="icon"><u class="icon-i_xx"></u></i>
+						</span>
                     </div>
                     <div class="nav_list">
                         <div class="nav_list_scroll">
@@ -232,27 +563,82 @@
                                 <div class="car-items cartDown">
                                     <ul>
                                         <li class="item_pic">
-                                            <a title="" href=""><img src="https://photo.polylulu.com.tw/Photo/PDImg/93010036/93010036_A06.jpg" title="" alt="">
+                                            <a title="" href="/zh-CHT/pol/product?saleid=9231087601"><img src="https://app-resource.polylulu.com.tw/app_img/92310876/E0AB75A4-7859-4EFD-8F40-B8E242F7CC56.jpg" title="" alt="">
                                             </a>
                                         </li>
                                         <li class="item_info text-left">
-                                            <span class="item_info_name"> <a title="" href="">素面下擺圓弧後壓摺長袖針織衫</a></span>
-                                            <span class="item_info_sale">還差2件即享85折優惠，<a title="" href="" class="link_underline">挑選更多+</a></span>
-                                            <span class="item_info_other">Color : 白 / Size: L / Item: 99</span>
-                                            <span class="price">NTD.548</span></li>
+                                            <span class="item_info_name"> <a title="" href="/zh-CHT/pol/product?saleid=9231087601">V領格紋綁繩開釦洋裝 中大尺碼洋裝</a></span>
+
+
+
+                                            <span class="item_info_other">Color:紅/Size:XL/Item:1</span>
+                                            <span class="price">NTD.650</span></li>
                                     </ul>
                                     <ul>
                                         <li class="item_pic">
-                                            <a title="" href=""><img src="https://photo.polylulu.com.tw/Photo/PDImg/93010036/93010036_A06.jpg" title="" alt="">
+                                            <a title="" href="/zh-CHT/pol/product?saleid=9101039203"><img src="https://app-resource.polylulu.com.tw/app_img/91010392/6B5763B9-268D-4CA8-8683-15746B1E12C5.jpg" title="" alt="">
                                             </a>
                                         </li>
                                         <li class="item_info text-left">
-                                            <span class="item_info_name"> <a title="" href="">素面下擺圓弧後壓摺長袖針織衫</a></span>
-                                            <span class="item_info_sale">還差2件即享85折優惠，<a title="" href="" class="link_underline">挑選更多+</a></span>
-                                            <span class="item_info_other">Color : 白 / Size: L / Item: 99</span>
-                                            <span class="price">NTD.548</span></li>
-                                    </ul>
+                                            <span class="item_info_name"> <a title="" href="/zh-CHT/pol/product?saleid=9101039203">純色交叉美背微短版T恤 中大尺碼上衣</a></span>
 
+
+
+                                            <span class="item_info_other">Color:米白/Size:XL/Item:1</span>
+                                            <span class="price">NTD.430</span></li>
+                                    </ul>
+                                    <ul>
+                                        <li class="item_pic">
+                                            <a title="" href="/zh-CHT/pol/product?saleid=9101039201"><img src="https://app-resource.polylulu.com.tw/app_img/91010392/BD4AC5FB-E3F9-4A09-B267-D4C32CBB3D65.jpg" title="" alt="">
+                                            </a>
+                                        </li>
+                                        <li class="item_info text-left">
+                                            <span class="item_info_name"> <a title="" href="/zh-CHT/pol/product?saleid=9101039201">純色交叉美背微短版T恤 中大尺碼上衣</a></span>
+
+
+
+                                            <span class="item_info_other">Color:棕色/Size:XL/Item:1</span>
+                                            <span class="price">NTD.430</span></li>
+                                    </ul>
+                                    <ul>
+                                        <li class="item_pic">
+                                            <a title="" href="/zh-CHT/pol/product?saleid=9624004701"><img src="https://app-resource.polylulu.com.tw/app_img/96240047/80A14F25-9188-45E2-98ED-D7B4DDA74DD4.jpg" title="" alt="">
+                                            </a>
+                                        </li>
+                                        <li class="item_info text-left">
+                                            <span class="item_info_name"> <a title="" href="/zh-CHT/pol/product?saleid=9624004701">ProH_MIT發熱內搭長褲 中大尺碼褲子</a></span>
+
+                                            <span class="item_info_sale">1117-Pro_H發熱系列任2件85折<a title="" href="/zh-cht/pol/productlist?keyword=pi:6599241901" class="link_underline">挑選更多+</a></span>
+
+                                            <span class="item_info_other">Color:灰/Size:L/Item:1</span>
+                                            <span class="price">NTD.502</span></li>
+                                    </ul>
+                                    <ul>
+                                        <li class="item_pic">
+                                            <a title="" href="/zh-CHT/pol/product?saleid=9103010703"><img src="https://app-resource.polylulu.com.tw/app_img/91030107/0DEA417D-0572-4C96-A076-5D1CEFC013F7.jpg" title="" alt="">
+                                            </a>
+                                        </li>
+                                        <li class="item_info text-left">
+                                            <span class="item_info_name"> <a title="" href="/zh-CHT/pol/product?saleid=9103010703">ProH_MIT發熱無袖背心 中大尺碼上衣</a></span>
+
+                                            <span class="item_info_sale">1117-Pro_H發熱系列任2件85折<a title="" href="/zh-cht/pol/productlist?keyword=pi:6599241901" class="link_underline">挑選更多+</a></span>
+
+                                            <span class="item_info_other">Color:黑/Size:2XL/Item:1</span>
+                                            <span class="price">NTD.417</span></li>
+                                    </ul>
+                                    <ul>
+                                        <li class="item_pic">
+                                            <a title="" href="/zh-CHT/pol/product?saleid=9101041201"><img src="https://app-resource.polylulu.com.tw/app_img/91010412/84F18F9B-E644-4B6D-A444-A966AFD0F8EC.jpg" title="" alt="">
+                                            </a>
+                                        </li>
+                                        <li class="item_info text-left">
+                                            <span class="item_info_name"> <a title="" href="/zh-CHT/pol/product?saleid=9101041201">ProH_MIT發熱短袖上衣 中大尺碼上衣</a></span>
+
+                                            <span class="item_info_sale">1117-Pro_H發熱系列任2件85折<a title="" href="/zh-cht/pol/productlist?keyword=pi:6599241901" class="link_underline">挑選更多+</a></span>
+
+                                            <span class="item_info_other">Color:白/Size:XL/Item:1</span>
+                                            <span class="price">NTD.502</span></li>
+                                    </ul>
                                 </div>
                                 <div class="menuCart_total">
                                     <span>共 <b>99</b> 件 </span>
@@ -265,28 +651,347 @@
                         </div>
                     </li>
                 </ul>
-                <!-- <ul class="navTool">
-                    <li>
-                        <a title="" href=""><i class="icon"><u class="icon-i_search"></u></i><span>SEARCH</span><b>搜尋</b></a>
-                    </li>
-                    <li>
-                        <a title="" href=""><i class="icon"><u class="icon-i_member"></u></i><span>MY ACCOUNT</span><b>會員中心</b></a>
-                    </li>
-                    <li class="has_ball link_wish">
-                        <a title="" href=""><i class="icon"><u class="icon-i_heart"></u></i><span>WISH LIST</span><b>願望清單</b></a>
-                        <p class="red_ball">5</p>
-                    </li>
-                    <li class="has_ball link_cart">
-                        <a title="" href=""><i class="icon"><u class="icon-i_cart"></u></i><span>CART</span><b>購物車</b></a>
-                        <p class="red_ball">9</p>
-                    </li>
-                </ul> -->
             </div>
 
         </div>
     </header>
+
+    <!-- 蓋版 + 置頂的 JS //// op -->
+    <script>
+        var cookie01 = 0; //蓋板
+        var cookie02 = 1; //置頂
+        $(document).ready(function() {
+            if (cookie01 == 0) { //有cookie-蓋版
+                $("#adModal").modal('hide');
+                console.log("蓋板出現過了!");
+            } else { //沒cookie-蓋版
+                $("#adModal").modal('show');
+
+            }
+
+            if (cookie02 == 0) { //有cookie置頂
+                $('.toptopBN').css('display', 'none');
+                console.log("置頂出現過了!");
+            } else { //沒cookie
+                $("#mainArea").addClass('moveDown');
+                $('#closeAD').on('click', function() {
+                    $('.toptopBN').addClass('toptopBNOut');
+                    $('.toptopBN').fadeOut(300);
+                    $("#mainArea").removeClass('moveDown');
+                });
+            }
+        });
+    </script>
+    <!-- 蓋版 + 置頂的 JS //// -->
     <!-- Main Content op -->
     <div id="mainArea" class="pageIn pageCart">
+        <!-- 結帳折扣碼 op -->
+        <div class="copyCode_cart">
+            <style>
+                /*copyCoupon*/
+                
+                .showPC {
+                    display: block;
+                }
+                
+                .showM {
+                    display: none;
+                }
+                
+                .coupon_item_cart {
+                    position: relative;
+                    z-index: 1;
+                    margin-bottom: 40px;
+                }
+                
+                .coupon_item_cart a img {
+                    width: 100%;
+                }
+                
+                .copyCoupon_wrap_cart {
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    display: flex;
+                    margin-top: 0;
+                    padding: 0 30px 0 50px;
+                    /* border: 1px solid #00f; */
+                }
+                
+                .copyCoupon_cart {
+                    position: relative;
+                    width: 100%;
+                    text-align: center;
+                    padding: 0 .5em;
+                    /* border: 1px solid #00f; */
+                }
+                
+                .copyCoupon_cart input {
+                    position: absolute;
+                    top: 0;
+                    left: 34%;
+                    width: 30%;
+                    height: 45px;
+                    margin-top: 45px;
+                    color: #050505;
+                    background-color: #b6b6b6;
+                    border: 0;
+                    text-align: center;
+                    padding: .5em 0;
+                    font-size: 24px;
+                    font-family: 'Times New Roman', Times, serif !important;
+                    font-family: 'Century Gothic', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+                    font-weight: bold;
+                    opacity: 0;
+                    /* border: 1px solid #f00; */
+                }
+                
+                .copyCoupon_cart.code_cart02 input {
+                    margin-top: 12px;
+                    margin-right: 44px;
+                }
+                
+                .copyCoupon_cart.code_cart03 input {
+                    /* border: 1px solid #f00; */
+                    margin-top: 12px;
+                    margin-right: 16px;
+                }
+                
+                .btn_copy_cart {
+                    position: absolute;
+                    top: 0;
+                    z-index: 999;
+                    width: 45%;
+                    height: 190px;
+                    margin-top: 0;
+                    margin-left: -20%;
+                    background-color: transparent;
+                    color: #7c1212;
+                    cursor: pointer;
+                    font-size: 22px;
+                    font-family: 'Times New Roman', Times, serif !important;
+                    font-family: 'Century Gothic', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+                    font-weight: bold;
+                    border: 0;
+                    /* border: 1px solid #f00; */
+                }
+                
+                .btn_copy_cart:focus {
+                    outline: none;
+                }
+                
+                .code_cart02 .btn_copy_cart {
+                    margin-left: 133px;
+                }
+                
+                .code_cart03 .btn_copy_cart {
+                    margin-left: 164px;
+                }
+                
+                @media screen and (max-width: 1199px) {
+                    .copyCode_cart {
+                        padding-top: 60px;
+                    }
+                    .btn_copy_cart {
+                        width: 37%;
+                        height: 138px;
+                    }
+                    .copyCoupon_cart input {
+                        margin-top: 3.8vw;
+                        height: 39px;
+                        /* opacity: .5; */
+                        /* border: 1px solid #f00; */
+                    }
+                }
+                
+                @media screen and (max-width: 991px) {
+                    .copyCode_cart {
+                        padding-top: 0;
+                    }
+                    .btn_copy_cart {
+                        width: 37%;
+                        height: 138px;
+                    }
+                    .copyCoupon_cart input {
+                        height: 31px;
+                        margin-top: 3.8vw;
+                        font-size: 18px;
+                    }
+                }
+                
+                @media screen and (max-width: 767px) {
+                    .showPC {
+                        display: none;
+                    }
+                    .showM {
+                        display: block;
+                    }
+                    .btn_copy_cart {
+                        width: 41%;
+                        height: 17vw;
+                        margin-left: -24%;
+                    }
+                    .copyCoupon_cart {
+                        top: 40vw;
+                    }
+                    .copyCoupon_cart input {
+                        left: 4%;
+                        width: 52%;
+                        height: 20px;
+                        margin-top: 0;
+                        margin-left: 0;
+                        font-size: 15px;
+                    }
+                    .copyCoupon_wrap {
+                        width: 100%;
+                        position: absolute;
+                        display: flex;
+                        margin-top: 0;
+                        padding: 0 30px 0 50px;
+                        /* border: 1px solid #ff0; */
+                    }
+                    .copyCoupon {
+                        position: relative;
+                        width: 100%;
+                        text-align: center;
+                        padding: 0 .5em;
+                        /* border: 1px solid #ff0; */
+                    }
+                    .copyCoupon input {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 60%;
+                        height: 22px;
+                        margin-top: -27.5vw;
+                        /* color: #050505; */
+                        /* background-color: #b6b6b6; */
+                        border: 0;
+                        text-align: center;
+                        padding: 0;
+                        font-size: 16px;
+                        font-family: 'Times New Roman', Times, serif !important;
+                        font-family: 'Century Gothic', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+                        font-weight: bold;
+                        outline: none;
+                    }
+                    .copyCoupon.code02 input {
+                        margin-top: 12px;
+                        margin-right: 44px;
+                    }
+                    .copyCoupon.code03 input {
+                        /* border: 1px solid #f00; */
+                        margin-top: 12px;
+                        margin-right: 16px;
+                    }
+                    .btn_copy {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 999;
+                        width: 100%;
+                        height: 33px;
+                        margin-top: -19vw;
+                        margin-left: 0;
+                        background-color: transparent;
+                        color: #ffffff;
+                        cursor: pointer;
+                        font-size: 24px;
+                        font-family: 'Times New Roman', Times, serif !important;
+                        font-family: 'Century Gothic', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+                        font-weight: bold;
+                        opacity: 0;
+                        /* border: 1px solid #f00; */
+                    }
+                    .code02 .btn_copy {
+                        margin-left: 133px;
+                    }
+                    .code03 .btn_copy {
+                        margin-left: 164px;
+                    }
+                    #cart-step {
+                        margin-top: 0.1em;
+                    }
+                    .cart_bn {
+                        margin-top: 4.9vw;
+                    }
+                }
+                
+                @media screen and (max-width: 375px) {}
+                
+                @media screen and (max-width: 321px) {
+                    .copyCoupon input {
+                        margin-top: -12.8vw;
+                        left: 35%;
+                        width: 32%;
+                        height: 13px;
+                    }
+                    .btn_copy {
+                        margin-top: -27px;
+                    }
+                }
+            </style>
+            <div class="coupon_item_cart">
+                <a href="https://www.polylulu.com.tw/productsale?KeyWord=pi:6599296401">
+                    <img src="https://photo.polylulu.com.tw/photo/act/coupon/20220819/cart-20220819-pc.jpg" class="showPC">
+                    <img src="https://photo.polylulu.com.tw/photo/act/coupon/20220819/cart-20220819-m.jpg" class="showM">
+                </a>
+                <div class="copyCoupon_wrap_cart">
+                    <div class="copyCoupon_cart code_cart01">
+                        <input type="text" value="819150" id="cartInput">
+                        <button class="btn_copy_cart" onclick="copyCoupon_cart()"></button>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(".coupon_item_cart").css("visibility", "visible");
+                $("#copyTarget_cart, #copyTarget_cart1").on("click", function() {
+                    $(this).select();
+                });
+
+                //複製折扣碼
+                var copyText_cafrt = document.getElementById("cartInput");
+                var copyText_cafrt1 = document.getElementById("cartInput1");
+                var copyText_cafrt2 = document.getElementById("cartInput2");
+
+                var arrayCopy_cart = [copyText_cafrt, copyText_cafrt1, copyText_cafrt2];
+                var arrayStr_cart = ["819150", "819150", "819150"];
+
+                $(".code_cart01").val(arrayStr_cart[0]);
+                $(".code_cart02").val(arrayStr_cart[1]);
+                $(".code_cart03").val(arrayStr_cart[2]);
+
+                function copyEvent_cart(e) {
+                    arrayCopy_cart[e].select();
+                    arrayCopy_cart[e].setSelectionRange(0, 99999)
+                    document.execCommand("copy");
+                    arrayCopy_cart[e].setAttribute("value", "複製成功!");
+                    arrayCopy_cart[e].setAttribute("style", "opacity: 1;");
+
+
+                    function test_cart() {
+                        arrayCopy_cart[e].setAttribute("value", arrayStr_cart[e]);
+                        arrayCopy_cart[e].setAttribute("style", "");
+                    }
+
+                    setTimeout(test_cart, 2000);
+
+                }
+
+                function copyCoupon_cart() {
+                    copyEvent_cart(0);
+                }
+
+                function copyCoupon_cart1() {
+                    copyEvent_cart(1);
+                }
+
+                function copyCoupon_cart2() {
+                    copyEvent_cart(2);
+                }
+            </script>
+        </div>
+        <!-- 結帳折扣碼 ed-->
         <!-- step Bar op -->
         <ul class="stepBar">
             <!-- 當前步驟:check / 完成步驟: finish -->
@@ -409,7 +1114,7 @@
                             <div>
                                 <span class="event_mark"><i class="icon"><u class="icon-i_gift"></u></i>滿額禮<i class="icon icon_arrow_right"><u class="icon-i_down"></u></i></span>
                                 <img src="https://photo.polylulu.com.tw/Photo/PDImg/96070244/96070244-A42.jpg" alt="" title="">
-                                <span class="gift_name">時尚貝雷帽<small> - 杏色-F</small></span>
+                                <span class="gift_name">(贈品)Poly Lulu x 美美貼紙<small> - 依賣場-F</small></span>
 
                             </div>
                             <div>
@@ -424,47 +1129,43 @@
                         <div class="row">
                             <div class="col-md-5 listBox">
                                 <div class="input-group">
-                                    <div class="custom-control custom-checkbox mr-2">
-                                        <input type="checkbox" class="custom-control-input discount_checkbox" id="customCheck1">
-                                        <label class="custom-control-label" for="customCheck1">折扣代碼 </label>
+                                    <div class="custom-control custom-radio mr-2">
+                                        <input type="radio" id="customCheck1" class="custom-control-input discount_radio" name="cart_discount">
+                                        <label for="customCheck1" class="custom-control-label">折扣代碼 </label>
                                     </div>
-                                    <input type="text" class="form-control showBox" placeholder="請輸入折扣代碼" aria-label="請輸入折扣代碼" aria-describedby="button-addon2">
+                                    <input type="text" id="Coupon" placeholder="請輸入折扣代碼" aria-label="請輸入折扣代碼" aria-describedby="button-addon2" class="form-control showBox">
                                     <div class="input-group-append showBox">
-                                        <a title="" href="" class="btn btn-primary" id="button-addon2">使用</a>
+                                        <a title="" href="javascript: void(0)" id="button-addon1" class="btn btn-primary">使用</a>
                                     </div>
                                 </div>
                                 <div class="input-group">
-                                    <div class="custom-control custom-checkbox mr-2">
-                                        <input type="checkbox" class="custom-control-input discount_checkbox" id="customCheck2">
-                                        <label class="custom-control-label" for="customCheck2">購物金 <span> NT. 458</span> </label>
+                                    <div class="custom-control custom-radio mr-2">
+                                        <input type="radio" id="customCheck3" class="custom-control-input discount_radio" name="cart_discount">
+                                        <label for="customCheck3" class="custom-control-label">紅利金 </label>
                                     </div>
-                                    <input type="text" class="form-control showBox" placeholder="請輸入購物金" aria-label="請輸入購物金" aria-describedby="button-addon2">
+                                    <select name="" id="Point" class="form-control showBox">
+                                        <option value="0">請選擇紅利金</option>
+                                    </select>
                                     <div class="input-group-append showBox">
-                                        <a title="" href="" class="btn btn-primary" id="button-addon2">使用</a>
+                                        <a title="" href="javascript: void(0);" id="button-addon2" class="btn btn-primary">使用</a>
                                     </div>
                                 </div>
                                 <div class="input-group">
-                                    <div class="custom-control custom-checkbox mr-2">
-                                        <input type="checkbox" class="custom-control-input discount_checkbox" id="customCheck3">
-                                        <label class="custom-control-label" for="customCheck3">紅利金 <span> NT. 458</span> </label>
+                                    <div class="custom-control custom-radio mr-2">
+                                        <input type="radio" id="customCheck2" class="custom-control-input discount_radio" name="cart_discount">
+                                        <label for="customCheck2" class="custom-control-label">優惠券 </label>
                                     </div>
-                                    <input type="text" class="form-control showBox" placeholder="請輸入紅利金" aria-label="請輸入紅利金" aria-describedby="button-addon2">
+                                    <select name="" id="Point" class="form-control showBox">
+                                        <option value="0">請選擇折抵優惠券</option>
+                                    </select>
                                     <div class="input-group-append showBox">
-                                        <a title="" href="" class="btn btn-primary" id="button-addon2">使用</a>
+                                        <a title="" href="javascript: void(0);" id="button-addon2" class="btn btn-primary">使用</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-7 listBox count">
-                                <div class="input-group">
-                                    <span>優惠代碼折抵:</span> <span>- 100</span>
-                                </div>
-                                <div class="input-group">
-                                    <span>購物金折抵: </span> <span>- 0</span>
-                                </div>
-                                <div class="input-group">
-                                    <span>紅利金折抵: </span> <span>- 0</span>
-                                </div>
-
+                                <div class="input-group"><span>商品金額:</span> <span> 1370</span></div>
+                                <div class="input-group"><span>優惠折抵:</span> <span>- 0</span></div>
                             </div>
                         </div>
                     </div>
@@ -472,7 +1173,7 @@
                         <h5><span>商品總金額 :</span><span class="total">NTD. <b>2,468</b></span></h5>
                         <span class="note_box"><i class="icon"><u class="icon-i_shipping"></u></i>您已達滿<b>$1200</b>免運門檻</span>
                     </div>
-                    <div class="pdList cart_pd_add">
+                    <!-- <div class="pdList cart_pd_add">
                         <h1 class="title">$99 加購商品區 <small>- 購物滿<b>$2000</b>，即可享有<b>$99</b>加購價 -</small></h1>
                         <div class="pd_items">
                             <div class="pd_items_scroll">
@@ -620,10 +1321,11 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="cart_checkout">
                         <ul class="info_list">
                             <li>請確認您購買的商品尺寸、顏色及數量。確認後訂單將無法進行任何更改喔！</li>
+                            <li class="remind">註:同時下單現貨/預購商品，需等待全數到齊後才會寄出！建議可分別下單唷～</li>
                             <li>若您上有其他商品需購買，請點選「繼續購物」。如果要進行結帳，請點選「下一步」</li>
                             <li>商品售價將以您實際結帳之即時價格為主，商品數量、贈品與優惠等，也將以您實際結賬為準。</li>
                             <li>請儘早完成結帳以確保享有贈品與優惠。</li>
@@ -643,8 +1345,7 @@
                     <div class="car-items">
                         <ul class="item_tit_pc">
                             <li class="item_pic">商品明細</li>
-                            <li class="item_info">
-                            </li>
+                            <li class="item_info"></li>
                             <li class="item_qty">數量</li>
                             <li class="item_price">價格</li>
                             <li class="item_price_sub">小計</li>
@@ -713,9 +1414,7 @@
             </div>
         </section>
         <!-- cart ed -->
-
     </div>
-
     <!-- Main Content op -->
     <footer>
         <div class="wrap">
@@ -805,6 +1504,7 @@
     </footer>
 
 
+
 </body>
 
 <script src="./Source/js/zh-cht/vendor/jquery-2.2.0.min.js" type="text/javascript"></script>
@@ -816,16 +1516,21 @@
 <script src="./Source/js/zh-cht/vendor/slick.js"></script>
 <script src="./Source/js/zh-cht/vendor/jquery.bootstrap-touchspin.min.js"></script>
 <script src="./Source/js/zh-cht/vendor/jquery.magnific-popup.min.js"></script>
+<script src="./Source/js/zh-cht/vendor/sticky-sidebar.min.js"></script>
 <script src="./Source/js/zh-cht/main.js"></script>
 <script type="text/javascript">
+    $(window).on('load', function() {
+        $('#myModal').modal('show');
+    });
     //選取數量的套件
     $("input[name='demo0']").TouchSpin();
 
     //折扣區
     $('.showBox').hide();
-    $('.discount_checkbox').change(function() {
+    $('.discount_radio').change(function() {
         if ($(this).prop('checked')) {
-            $(this).parent('.custom-control').siblings('.showBox').fadeIn(200);
+            $('.showBox').hide();
+            $(this).parent('.custom-control').siblings('.showBox').fadeIn(200).focus();
         } else {
             $(this).parent('.custom-control').siblings('.showBox').fadeOut(200);
         }

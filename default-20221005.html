@@ -1,0 +1,2386 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>PolyLulu</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="./Source/css/zh-cht/vendor/animate.css?20201012" rel="stylesheet" />
+    <link href="./Source/css/zh-cht/fonts/icomoon/icons.css?20201012" rel="stylesheet" />
+    <link href="./Source/css/zh-cht/fonts/fontawesome/all.min.css?20201012" rel="stylesheet" />
+    <link href="./Source/css/zh-cht/vendor/slick.css" rel="stylesheet" />
+    <link href="./Source/css/zh-cht/vendor/slick-theme.css" rel="stylesheet" />
+    <link href="./Source/css/zh-cht/vendor/magnific-popup.css?20201012" rel="stylesheet" />
+    <link href="./Source/css/zh-cht/main.css?20201012" rel="stylesheet" />
+    <script src="./Source/js/zh-cht/vendor/jquery-3.3.1.min.js?20190506"></script>
+</head>
+
+<body>
+    <style>
+        #adModal{
+            z-index: 99999999 !important;
+        }
+        #adModal .modal-backdrop{
+            z-index: 99999998 !important;
+        }
+        #adModal .modal-dialog {
+            max-width: fit-content;
+            margin-top: calc(50vh - 180px);
+            /*視窗高度/2 - 圖片高度/2*/
+        }
+        
+        #adModal .modal-content {
+            background: transparent;
+            border: 0;
+        }
+        
+        .modal-body {
+            padding: 0;
+        }
+        
+        .modal-body>button.close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 99;
+        }
+        
+        @media screen and (max-width: 767px) {
+            #adModal .modal-dialog {
+                /* display: none !important; */
+                margin-top: calc(50vh - 55vw);
+                ;
+                /*視窗高度/2 - 圖片高度/2*/
+            }
+            #popup-default .modal-dialog {
+                max-width: 80%;
+            }
+            .poppic {
+                max-width: 100%;
+            }
+        }
+    </style>
+    <div id="adModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <!-- Copy Coupon op-->
+                    <div class="copyCode">
+                        <style>
+                            /*copyCoupon*/
+
+                            .coupon_item {
+                                position: relative;
+                            }
+
+                            .coupon_item a {
+                                display: block;
+                            }
+
+                            .copyCoupon_wrap {
+                                width: 100%;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                text-align: center;
+                                /* display: flex; */
+                                margin-top: 465px;
+                                /* margin-left: 50px; */
+                                padding: 0 30px 0 50px;
+                                /* border: 1px solid #00f; */
+                            }
+
+                            .copyCoupon {
+                                position: relative;
+                                width: 100%;
+                                text-align: center;
+                                padding: 0 .5em;
+                                /* border: 1px solid #00f; */
+                            }
+
+                            .copyCoupon input {
+                                width: 70%;
+                                height: 36px;
+                                margin-left: -21px;
+                                color: #fdfffe;
+                                background-color: #cc4647;
+                                border: 0;
+                                text-align: center;
+                                padding: .5em 0;
+                                font-size: 16px;
+                                font-family: 'Times New Roman', Times, serif !important;
+                                font-family: 'Century Gothic', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+                                font-weight: bold;
+                                /* border-radius: 12px; */
+                                opacity: 0;
+                                /* border: 1px solid #f00; */
+                            }
+
+                            .copyCoupon.code02 input {
+                                margin-top: 12px;
+                                margin-right: 44px;
+                            }
+
+                            .copyCoupon.code03 input {
+                                /* border: 1px solid #f00; */
+                                margin-top: 12px;
+                                margin-right: 16px;
+                            }
+
+                            .btn_copy {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: 999;
+                                width: 100%;
+                                height: 100px;
+                                margin-top: 0;
+                                background-color: transparent;
+                                color: #efefef;
+                                cursor: pointer;
+                                font-size: 24px;
+                                font-family: 'Times New Roman', Times, serif !important;
+                                font-family: 'Century Gothic', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+                                font-weight: bold;
+                                border: 0;
+                                /* border: 1px solid #f00; */
+                            }
+
+                            .btn_copy:focus {
+                                outline: none;
+                            }
+
+                            .code02 .btn_copy {
+                                margin-left: 133px;
+                            }
+
+                            .code03 .btn_copy {
+                                margin-left: 164px;
+                            }
+
+                            @media screen and (max-width: 767px) {
+                                .copyCoupon_wrap {
+                                    margin-top: 80.4vw;
+                                    /* border: 1px solid #00f; */
+                                }
+
+                                .copyCoupon input {
+                                    left: 11.8vw;
+                                    width: 60%;
+                                    height: 1.7em;
+                                    margin-top: 7.85vw;
+                                    color: #fdfffe;
+                                    background-color: #cc4647;
+                                    border: 0;
+                                    padding: .5em 0;
+                                    font-size: 15px;
+                                    opacity: 0;
+                                    /* border: 1px solid #000; */
+                                }
+
+                                .btn_copy {
+                                    /* width: 100%; */
+                                    height: 25vw;
+                                    /* background-color: transparent; */
+                                    color: #efefef;
+                                    cursor: pointer;
+                                    font-size: 24px;
+                                    /* border: 1px solid #f00; */
+                                }
+                            }
+
+                            @media screen and (max-width: 375px) {
+                                .copyCoupon_wrap {
+                                    margin-top: 80.2vw;
+                                    /* border: 1px solid #00f; */
+                                }
+                            }
+
+                            @media screen and (max-width: 320px) {
+
+                                /* iphone5/SE */
+                                .copyCoupon_wrap {
+                                    margin-top: 80.5vw;
+                                }
+
+                                .copyCoupon input {
+                                    left: 9.2vw;
+                                    width: 65%;
+                                    margin-top: 6.2vw;
+                                    font-size: 13px;
+                                }
+                            }
+                        </style>
+                        <div class="coupon_item">
+                            <a href="https://www.polylulu.com.tw/productsale?KeyWord=pi:6599296401&onsale=1">
+                                <img src="https://photo.polylulu.com.tw/photo/act/coupon/20220819/event-20220819-pc.jpg"
+                                    class="poppic show4pc">
+                                <img src="https://photo.polylulu.com.tw/photo/act/coupon/20220819/event-20220819-m.jpg"
+                                    class="poppic show4sm"></a>
+
+                        </div>
+                        <script type="text/javascript">
+                            //複製折扣碼
+                            var copyText = document.getElementById("myInput");
+                            var copyText1 = document.getElementById("myInput1");
+                            var copyText2 = document.getElementById("myInput2");
+
+                            var arrayCopy = [copyText, copyText1, copyText2];
+                            var arrayStr = ["MON0307", "MON0307", "MON0307"];
+
+                            $(".code01").val(arrayStr[0]);
+                            $(".code02").val(arrayStr[1]);
+                            $(".code03").val(arrayStr[2]);
+
+                            function copyEvent(e) {
+                                arrayCopy[e].select();
+                                arrayCopy[e].setSelectionRange(0, 99999)
+                                document.execCommand("copy");
+                                arrayCopy[e].setAttribute("value", "複製成功!");
+                                arrayCopy[e].setAttribute("style", "opacity: 1;");
+
+
+                                function test() {
+                                    arrayCopy[e].setAttribute("value", arrayStr[e]);
+                                    arrayCopy[e].setAttribute("style", "");
+                                }
+
+                                setTimeout(test, 2000);
+
+                            }
+
+                            function copyCoupon() {
+                                copyEvent(0);
+                            }
+
+                            function copyCoupon1() {
+                                copyEvent(1);
+                            }
+
+                            function copyCoupon2() {
+                                copyEvent(2);
+                            }
+                        </script>
+                    </div>
+                    <!-- Copy Coupon ed-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 蓋版 ed -->
+    <div id="goTopMenu">
+        <ul class="goTop_pc">
+            <li>
+                <a title="" href="https://www.facebook.com/PolyLuluTW/" target="_blank"><i class="icon"><u
+                            class="icon-i_media_fb"></u></i><span>FACEBOOK</span></a>
+            </li>
+            <li>
+                <a title="" href="https://www.instagram.com/polylulu_tw/" target="_blank"><i class="icon"><u
+                            class="icon-i_media_ig"></u></i><span>INSTAGRAM</span></a>
+            </li>
+            <li>
+                <a title="" href="https://line.me/R/ti/p/%40aal2550w" target="_blank"><i class="icon"><u
+                            class="icon-i_media_line"></u></i><span>LINE</span></a>
+            </li>
+            <li>
+                <a title="" href="store.html" target="_blank"><i class="icon"><u
+                            class="icon-i_media_shop"></u></i><span>STORE</span></a>
+            </li>
+            <li>
+                <a title="" href="" target="_blank"></a><i class="icon"><u
+                        class="icon-i_media_app"></u></i><span>POLYLULU APP</span></a>
+            </li>
+            <li>
+                <a title="" href="" class="goTop"><i class="icon"><u class="icon-i_gotop"></u></i><span>TOP</span></a>
+            </li>
+        </ul>
+        <a title="" href="" class="goTop goTop_m"><i class="icon"><u class="icon-i_gotop"></u></i><span>TOP</span></a>
+    </div>
+    <header class="headerMain hdBig">
+        <!-- 置頂 op -->
+        <style>
+            @keyframes topIn {
+                0% {
+                    margin-top: -100px;
+                    opacity: 0;
+                }
+
+                100% {
+                    margin-top: 0;
+                    opacity: 1;
+                }
+            }
+
+            @keyframes topOut {
+                0% {
+                    margin-top: 0;
+                    opacity: 1;
+                }
+
+                100% {
+                    margin-top: -70px;
+                    opacity: 0;
+                }
+            }
+
+            .toptopBN {
+                display: none;
+            }
+
+            .toptopBN.toptopBNIn {
+                display: block;
+                position: relative;
+                z-index: 99999;
+                width: 100vw;
+                height: fit-content;
+                overflow: hidden;
+                animation: topIn .5s forwards ease-in-out;
+                text-align: center;
+            }
+
+            .toptopBN.toptopBNOut {
+                animation: topOut .2s forwards ease-in-out !important;
+            }
+
+            .toptopBN a {
+                display: inline-block;
+                max-width: 100%;
+                line-height: 0;
+                padding: 0;
+                margin: 0;
+                /* border: 1px solid #f00; */
+            }
+
+            .toptopBN a img {
+                max-width: 100%;
+                display: block;
+            }
+
+            .toptopBN .btnClose {
+                top: 0;
+                right: 16px;
+                font-size: 12px;
+            }
+
+            .btnClose {
+                cursor: pointer;
+            }
+
+            #mainArea.moveDown {
+                margin-top: 13vw !important;
+            }
+
+            #mainArea.pageIndex.moveDown {
+                margin-top: calc(174px + 5.7vw) !important;
+            }
+
+            @media screen and (max-width: 1199px) {
+                #mainArea.moveDown {
+                    margin-top: calc(102px + 9vw) !important;
+                }
+
+                #mainArea.pageIndex.moveDown {
+                    margin-top: calc(110px + 6.1vw) !important;
+                }
+
+                .toptopBN .btnClose {
+                    top: 0;
+                    right: 0;
+                    font-size: 12px;
+                }
+            }
+
+            @media screen and (max-width: 991px) {
+                #mainArea.pageIndex.moveDown {
+                    margin-top: calc(110px + 12.6vw) !important;
+                }
+            }
+
+            @media screen and (max-width: 767px) {
+                #mainArea.moveDown {
+                    margin-top: calc(102px + 19vw) !important;
+                }
+            }
+
+            @media screen and (max-width: 320px) {
+                #mainArea.moveDown {
+                    margin-top: calc(102px + 20.5vw) !important;
+                }
+            }
+        </style>
+        <div class="toptopBN"><span id="closeAD" class="btnClose"><i class="icon"><u class="icon-i_xx"></u></i></span>
+            <a href="https://www.polylulu.com.tw/productstyle?actno=2022123456">
+                <img src="https://photo.polylulu.com.tw/Photo/Act/top_banner/topBN-20221005-pc.gif" class=" show4pc">
+                <img src="https://photo.polylulu.com.tw/Photo/Act/top_banner/topBN-20221005-m.gif" class=" show4sm">
+            </a>
+        </div>
+        <!-- 置頂 ed -->
+        <div class="wrap">
+            <a title="" href="default.html" class="logo">
+                <span>L ~ 5XL</span>
+                <img src="Source/images/zh-cht/icons/logo.png" title="" alt="" class="img-fluid">
+
+            </a>
+            <div class="navItems">
+                <ul class="navMedia">
+                    <li>
+                        <a title="" href="https://www.facebook.com/PolyLuluTW/" target="_blank"><i class="icon"><u
+                                    class="icon-i_media_fb"></u></i></a>
+                    </li>
+                    <li>
+                        <a title="" href="https://www.instagram.com/polylulu_tw/" target="_blank"><i class="icon"><u
+                                    class="icon-i_media_ig"></u></i></a>
+                    </li>
+                    <li>
+                        <a title="" href="https://line.me/R/ti/p/%40aal2550w" target="_blank"><i class="icon"><u
+                                    class="icon-i_media_line"></u></i></a>
+                    </li>
+                    <li>
+                        <a title="" href="store.html" target="_blank"><i class="icon"><u
+                                    class="icon-i_media_shop"></u></i></a>
+                    </li>
+                    <li>
+                        <a title="" href="" target="_blank"><i class="icon"><u class="icon-i_media_app"></u></i></a>
+                    </li>
+                </ul>
+                <nav class="navMain">
+                    <div class="navMenuList"><u class="icon-i_menu"></u></div>
+                    <div class="navMain_bg">
+                        <div class="navMain_scroll">
+                            <ul>
+                                <li class="polyStyle">
+                                    <div class="menu_in">
+                                        <div class="wrap">
+                                            <ul>
+                                                <li>
+                                                    <div class="menu_tit">每周新品NEW ARRIVAL</div>
+                                                </li>
+                                                <li><a title="" href="/zh-cht/pol/productlist?KeyWord=pim:1610040001"
+                                                        target="_self">0929新品上市</a></li>
+                                            </ul>
+                                            <a title="" href="https://www.polylulu.com.tw/PDSalev2.asp?pi=6599232101"
+                                                class="menu_pic"><img
+                                                    src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/Banner/00.jpg"
+                                                    title="" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <a title=""
+                                        href="/zh-cht/pol/productlist?KeyWord=cid:000000"><span>NEW-IN</span><b>最新商品
+                                        </b></a>
+                                </li>
+                                <li class="navDott">．</li>
+                                <li class="polyStyle">
+                                    <div class="menu_in">
+                                        <div class="wrap">
+                                            <ul>
+                                                <li>
+                                                    <div class="menu_tit">風格企劃</div>
+                                                </li>
+                                                <li><a title=""
+                                                        href="/zh-cht/pol/productstyle?KeyWord=pim:1610040001&amp;actno=20211102"
+                                                        target="_self">Push up!塑型推推丹寧系列</a></li>
+                                                <li><a title=""
+                                                        href="/zh-cht/pol/productstyle?KeyWord=pim:2111160001&amp;actno=20211223"
+                                                        target="_self">Pro_H發熱系列</a></li>
+                                            </ul>
+                                            <a title="" href="https://www.polylulu.com.tw/PDSalev2.asp?pi=6599232101"
+                                                class="menu_pic"><img
+                                                    src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/Banner/07.jpg"
+                                                    title="" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <a title=""
+                                        href="productstyle?KeyWord=pim:1610040001&amp;actno=20211102"><span>POLY-STYLE</span><b>風格企劃
+                                        </b></a>
+                                </li>
+                                <li class="navDott">．</li>
+                                <li>
+                                    <a title=""
+                                        href="/zh-cht/pol/productlist?KeyWord=pim:1610040001"><span>HOT-SALE</span><b>熱銷到貨
+                                        </b></a>
+                                </li>
+                                <li class="navDott">．</li>
+                                <li>
+                                    <a title="" href="/zh-cht/pol/productlist?KeyWord=pim:1610040001"><span><i
+                                                class="spBTN">周年慶</i></span><b><i class="spBTN">EVENT</i></b></a>
+                                </li>
+                                <li class="navDott">．</li>
+                                <li class="polyStyle">
+                                    <div class="menu_in">
+                                        <div class="wrap">
+                                            <ul>
+                                                <li>
+                                                    <div class="menu_tit">ONSALE</div>
+                                                </li>
+                                                <li><a title=""
+                                                        href="/zh-cht/pol/productlist?KeyWord=pi:6599138101&amp;onsale=1"
+                                                        target="_self">初秋新品上市【88折】</a></li>
+                                            </ul>
+                                            <a title="" href="" class="menu_pic"><img
+                                                    src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/Banner/06.jpg"
+                                                    title="" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <a title=""
+                                        href="/zh-cht/pol/productlist?KeyWord=pi:6599138101&amp;onsale=1"><span>SALE</span><b>SALE
+                                        </b></a>
+                                </li>
+                                <li class="navDott">．</li>
+                                <li class="polyStyle pdAll">
+                                    <div class="menu_in">
+                                        <div class="wrap">
+                                            <ul>
+                                                <li>
+                                                    <div class="menu_tit">上衣TOP</div>
+                                                </li>
+                                                <li><a title="" href="/zh-cht/pol/productlist?KeyWord=cid:111100"
+                                                        target="_self">上衣全系列</a></li>
+                                                <li><a title="" href="/zh-cht/pol/productlist?KeyWord=cid:111102"
+                                                        target="_self">雪紡</a></li>
+                                            </ul>
+                                            <ul>
+                                                <li>
+                                                    <div class="menu_tit">洋裝 DRESS</div>
+                                                </li>
+                                                <li><a title="" href="/zh-cht/pol/productlist?KeyWord=cid:112200"
+                                                        target="_self">洋裝全系列</a></li>
+                                            </ul>
+                                            <ul>
+                                                <li>
+                                                    <div class="menu_tit">下身BOTTOM</div>
+                                                </li>
+                                                <li><a title="" href="/zh-cht/pol/productlist?KeyWord=cid:000000"
+                                                        target="_self">褲子全系列</a></li>
+                                            </ul>
+                                            <a title="" href="polylulu.com.tw/PDList2.asp?item=all&amp;ob=D3"
+                                                class="menu_pic"><img
+                                                    src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/Banner/02.jpg"
+                                                    title="" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <a title=""
+                                        href="/zh-cht/pol/productlist?KeyWord=cid:000000"><span>ALL</span><b>全館商品
+                                        </b></a>
+                                </li>
+                                <li class="navDott">．</li>
+                                <li>
+                                    <a title="" href="https://www.polylulu.com.tw/polyact.asp?actno=2021080501"
+                                        target="_blank"><span>好友綁定</span><b>好友綁定 </b></a>
+                                </li>
+                                <li class="navDott">．</li>
+                                <li>
+                                    <a title="" href="https://polylulu.org/" target="_blank"><i
+                                            class="hothot">NEW</i><span>POLY BLOG</span><b>波妞部落格 </b></a>
+                                </li>
+                                <li class="navDott">．</li>
+                                <li>
+                                    <a title="" href="/zh-cht/store"><span>STORE-INFO</span><b>門市資訊 </b></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </nav>
+                <nav class="navMain_m slideLeft">
+                    <div class="nav_top">
+                        <span>MENU </span>
+                        <span class="btnClose">
+                            <i class="icon"><u class="icon-i_xx"></u></i>
+                        </span>
+                    </div>
+                    <div class="nav_list">
+                        <div class="nav_list_scroll">
+                            <ul>
+                                <li>
+                                    <a title="" href="">最新商品</a>
+                                    <div class="menu_in"><a title=""
+                                            href="/zh-cht/pol/productlist?keyword=pim:1610040001">▸0929新品上市</a></div>
+                                </li>
+                                <li>
+                                    <a title="" href="">風格企劃</a>
+                                    <div class="menu_in"><a title=""
+                                            href="/zh-cht/pol/productstyle?keyword=pim:1610040001&amp;actno=20211102">▸Push
+                                            up!塑型推推丹寧系列</a><a title=""
+                                            href="/zh-cht/pol/productstyle?keyword=pim:2111160001&amp;actno=20211223">▸Pro_H發熱系列</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a title="" style="color:#EC4C74;">SALE</a>
+                                    <div class="menu_in"><a title=""
+                                            href="/zh-cht/pol/productlist?KeyWord=pi:6599138101&amp;onsale=1">▸初秋新品上市【88折】</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a title="" href="">上衣TOP</a>
+                                    <div class="menu_in"><a title=""
+                                            href="/zh-cht/pol/productlist?keyword=cid:111100">▸上衣全系列</a><a title=""
+                                            href="/zh-cht/pol/productlist?keyword=cid:111102">▸雪紡</a></div>
+                                </li>
+                                <li>
+                                    <a title="" href="">洋裝 DRESS</a>
+                                    <div class="menu_in"><a title=""
+                                            href="/zh-cht/pol/productlist?keyword=cid:112200">▸洋裝全系列</a></div>
+                                </li>
+                                <li>
+                                    <a title="" href="">下身BOTTOM</a>
+                                    <div class="menu_in"><a title=""
+                                            href="/zh-cht/pol/productlist?keyword=cid:000000">▸褲子全系列</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="navMedia">
+                        <li>
+                            <a title="" href="https://www.facebook.com/PolyLuluTW/" target="_blank"><i class="icon"><u
+                                        class="icon-i_media_fb"></u></i></a>
+                        </li>
+                        <li>
+                            <a title="" href="https://www.instagram.com/polylulu_tw/" target="_blank"><i class="icon"><u
+                                        class="icon-i_media_ig"></u></i></a>
+                        </li>
+                        <li>
+                            <a title="" href="https://line.me/R/ti/p/%40aal2550w" target="_blank"><i class="icon"><u
+                                        class="icon-i_media_line"></u></i></a>
+                        </li>
+                        <li>
+                            <a title="" href="/zh-cht/store" target="_blank"><i class="icon"><u
+                                        class="icon-i_media_shop"></u></i></a>
+                        </li>
+                        <li>
+                            <a title="" href="https://play.google.com/store/apps/details?id=com.polylulu.app"
+                                target="_blank"><i class="icon"><u class="icon-i_media_app"></u></i></a>
+                        </li>
+                    </ul>
+                </nav>
+                <ul class="navTool">
+                    <li class="nav_search">
+                        <a title="" href=""><i class="icon"><u class="icon-i_search"></u></i></a>
+                        <div class="search_bg" style="display: none;">
+                            <div class="search_bar">
+                                <input type="text" placeholder="Search">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a title="" href="member.html"><i class="icon"><u class="icon-i_member"></u></i></a>
+                    </li>
+                    <li class="has_ball link_wish">
+                        <a title="" href="login.html"><i class="icon"><u class="icon-i_heart"></u></i></a>
+                        <p class="red_ball">5</p>
+                    </li>
+                    <li class="has_ball link_cart">
+                        <a title="" href="/zh-cht/shoppingcart"><i class="icon"><u class="icon-i_cart"></u></i></a>
+                        <p class="red_ball" id="cart_num">4</p>
+                        <div id="floatcart" class="menu_in">
+                            <div class="wrap">
+                                <div class="menuCart_title">
+                                    <h3>YOUR CART</h3>
+                                </div>
+                                <div class="car-items cartDown">
+                                    <ul>
+                                        <li class="item_pic">
+                                            <a title="" href="/zh-CHT/pol/product?saleid=9103013501"><img
+                                                    src="https://app-resource.polylulu.com.tw/app_img/91030135/61DAAA06-AD7C-44B2-903B-50A1A55DD179.jpg"
+                                                    title="" alt="">
+                                            </a>
+                                        </li>
+                                        <li class="item_info text-left">
+                                            <span class="item_info_name"> <a title=""
+                                                    href="/zh-CHT/pol/product?saleid=9103013501">ProH_MIT發熱bra細肩背心
+                                                    中大尺碼上衣中大尺碼上衣</a></span>
+
+                                            <span class="item_info_sale">夏末出清【2件75折】<a title=""
+                                                    href="/zh-cht/pol/productsale?keyword=pi:6599241901"
+                                                    class="link_underline">挑選更多+</a></span>
+                                            <span class="item_info_sale">未達到活動門檻</span>
+                                            <span class="item_info_other">Color:黑嘿嘿/Size:2XL/Item:1</span>
+                                            <span class="price">NTD.493</span>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="item_pic">
+                                            <a title="" href="/zh-CHT/pol/product?saleid=9304005001"><img
+                                                    src="https://app-resource.polylulu.com.tw/app_img/93040050/CC63848F-97AF-400B-9578-31735A845DFD.jpg"
+                                                    title="" alt="">
+                                            </a>
+                                        </li>
+                                        <li class="item_info text-left">
+                                            <span class="item_info_name"> <a title=""
+                                                    href="/zh-CHT/pol/product?saleid=9304005001">隨性澎澎袖綁帶毛呢大衣
+                                                    中大尺碼外套</a></span>
+
+
+
+                                            <span class="item_info_other">Color:棕紅/Size:XL/Item:2</span>
+                                            <span class="price">NTD.2560</span>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="item_pic">
+                                            <a title="" href="/zh-CHT/pol/product?saleid=9304005001"><img
+                                                    src="https://app-resource.polylulu.com.tw/app_img/93040050/CC63848F-97AF-400B-9578-31735A845DFD.jpg"
+                                                    title="" alt="">
+                                            </a>
+                                        </li>
+                                        <li class="item_info text-left">
+                                            <span class="item_info_name"> <a title=""
+                                                    href="/zh-CHT/pol/product?saleid=9304005001">隨性澎澎袖綁帶毛呢大衣
+                                                    中大尺碼外套</a></span>
+
+
+
+                                            <span class="item_info_other">Color:楓葉紅色/Size:3XL/Item:1</span>
+                                            <span class="price">NTD.1280</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="menuCart_total">
+                                    <span>共<b>4</b>件</span>
+                                    <span>小計:NTD. <b>4420</b></span>
+                                </div>
+                                <div class="menuCart_btn">
+                                    <a title="" href="/zh-cht/shoppingcart" class="btn btn-primary">查看購物車</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main Content op -->
+    <div id="mainArea" class="pageIndex">
+        <!-- 大圖 op -->
+        <section id="indexTopBN">
+            <div class="indexTopBN slick">
+                <div>
+                    <a title="" href="//www.dowebok.com"><img src="./Source/images/zh-cht/assets/banner_pc_01.jpg"
+                            alt="" class="indexTopBN_pc">
+                        <img src="./Source/images/zh-cht/assets/banner_m_01.jpg" alt="" class="indexTopBN_m"></a>
+                </div>
+                <div>
+                    <a title="" href="//www.dowebok.com"><img src="./Source/images/zh-cht/assets/banner_pc_02.jpg"
+                            alt="" class="indexTopBN_pc"><img src="./Source/images/zh-cht/assets/banner_m_02.jpg" alt=""
+                            class="indexTopBN_m"></a>
+                </div>
+                <div>
+                    <a title="" href="//www.dowebok.com"><img src="./Source/images/zh-cht/assets/banner_pc_03.jpg"
+                            alt="" class="indexTopBN_pc"><img src="./Source/images/zh-cht/assets/banner_m_03.jpg" alt=""
+                            class="indexTopBN_m"></a>
+                </div>
+            </div>
+            <script>
+                $(function () {
+                    $('.indexTopBN').slick({
+                        dots: true,
+                        fade: true,
+                        autoplay: true,
+                        autoplaySpeed: 3000,
+                        arrows: false
+                    });
+                });
+            </script>
+        </section>
+        <!-- 大圖 ed -->
+        <!-- SALE op -->
+        <div class="topBN_new">
+            <style>
+                @media (min-width: 768px) {
+                    .topBN_new {
+                        background: url('https://photo.polylulu.com.tw/photo/act/20220615/topBN-20220615-pc.jpg') no-repeat center 0;
+                        height: 100px;
+                        margin-top: 30px;
+                    }
+                }
+
+                @media (max-width: 767px) {
+                    .topBN_new {
+                        margin-top: 10px;
+                    }
+
+                    .showM {
+                        width: 100%;
+                    }
+                }
+            </style>
+            <img src="https://photo.polylulu.com.tw/photo/act/20220615/topBN-20220615-m.jpg" alt="" class="showM">
+        </div>
+        <div class="topEvent">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+            <!-- SALE區 op-->
+            <style>
+                .showPC,
+                .links.showPC {
+                    display: block;
+                }
+
+                .showM,
+                .links.showM {
+                    display: none;
+                }
+
+                .picBgset {
+                    position: relative;
+                    width: 1280px;
+                    margin: 0 auto;
+                }
+
+                .picBgset.bgtit {
+                    padding: 0 37px;
+                    box-sizing: border-box;
+                }
+
+                .picBgset h1 {
+                    width: 100%;
+                    font-size: 20px;
+                    font-weight: 600;
+                    letter-spacing: .5em;
+                    color: #242424;
+                    text-align: center;
+                    font-family: 'Noto Sans TC', "Microsoft JhengHei", arial;
+                    margin-top: 78px;
+                    padding: 35px 0 60px 0;
+                    box-sizing: border-box;
+                    border-top: 1px solid #bfbfbf;
+                    transform: scale(1.05, 1);
+                    padding-left: 1em;
+                }
+
+                .picBgset.toptit h1 {
+                    margin-top: 15px;
+                }
+
+                .picBgset .links {
+                    display: flex;
+                    width: 1280px;
+                    margin: 0 auto;
+                    flex-grow: 1;
+                    justify-content: space-between;
+                }
+
+                .picBgset .links a {
+                    width: 100%;
+                    /* height: 50vw; */
+                    box-sizing: border-box;
+                    /* border: 1px solid #f00; */
+                }
+
+                .picBgset>img {
+                    width: 100%;
+                }
+
+                .picBgset.bg_sp .links {
+                    flex-wrap: wrap;
+                }
+
+                .picBgset.bg_sp .links a {
+                    width: 50%;
+                    flex-basis: 50%;
+                }
+
+                .picBgset.bg_sp .links a:nth-child(even) img,
+                .picBgset.bg_event .links a:nth-child(even) img {
+                    margin-left: auto;
+                    /* border: 1px solid #f00; */
+                }
+
+                .picBgset.bg_sp .links a:nth-child(1),
+                .picBgset.bg_sp .links a:nth-child(2) {
+                    margin-bottom: 50px;
+                }
+
+                /* .picBgset.bg_news .links,
+                .picBgset.bg_intro .links {
+                    padding-left: 12px;
+                } */
+
+                .picBgset.bg_sp .links a img {
+                    width: auto;
+                }
+
+                .picBgset.bg_brand {
+                    width: 100%;
+                    background-color: #eae1da;
+                }
+
+                .picBgset.bg_brand>div {
+                    position: relative;
+                    width: 1280px;
+                    margin: 0 auto;
+                    padding: 60px 0;
+                }
+
+                .picBgset.bg_brand>div a {
+                    margin: 0 12px;
+                }
+
+                /* .picBgset.bg_brand>div img {
+                    width: 100%;
+                } */
+
+                .btn_more {
+                    position: relative;
+                    width: 214px;
+                    /* border: 1px solid #333; */
+                    color: #333;
+                    display: block;
+                    margin: 2em auto;
+                    font-size: 15px;
+                    text-align: center;
+                    /* padding: 0.3em 1em; */
+                    font-weight: bold;
+                    transition: .4s;
+                    letter-spacing: 0;
+                    text-indent: -0.7em;
+                    text-decoration: none;
+                    line-height: 1.7em;
+                    /* opacity: .8; */
+                    /* font-family: "Microsoft JhengHei", arial; */
+                    /* transform: scale(1.05, 1); */
+                }
+
+                .btn_more:hover {
+                    /* opacity: 1; */
+                }
+
+                .gray_bar:after {
+                    /* background-color: rgba(245, 243, 244, 0.3); */
+                    background-color: transparent;
+                }
+
+                .section-instagram .wrapper {
+                    margin-bottom: 0;
+                }
+
+                @media(min-width: 1200px) {
+
+                    .picBgset.bg_brand>div img,
+                    .picBgset .links a img {
+                        width: auto !important;
+                        max-width: none !important;
+                    }
+
+                    .topEvent,
+                    #section-instagram {
+                        max-width: 1920px !important;
+                        margin: 0 auto;
+                    }
+                }
+
+                @media(max-width: 1279px) and (min-width:768px) {
+
+                    .picBgset,
+                    .picBgset .links,
+                    .picBgset.bg_brand>div,
+                    .picBgset .links a img,
+                    .picBgset.bg_sp .links a img {
+                        width: 100%;
+                        /* border: 1px solid #f00; */
+                    }
+
+                    .picBgset,
+                    .picBgset .links a {
+                        display: inline-block !important;
+                    }
+
+                    .picBgset.bg_sp .links a {
+                        padding: 10px;
+                    }
+                }
+
+                @media (min-width: 768px) {
+
+                    .picBgset.bg_news .links a,
+                    .picBgset.bg_intro .links a {
+                        /* margin: 0 5px; */
+                        /* text-align: center; */
+                        display: contents;
+                    }
+
+                    .picBgset.bg_news .links a.showM,
+                    .picBgset.bg_intro .links a.showM {
+                        display: none !important;
+                    }
+                }
+
+                @media (max-width: 767px) {
+                    .showPC {
+                        display: none;
+                    }
+
+                    .showM {
+                        display: block !important;
+                    }
+
+                    .topEvent {
+                        /* background-color: #f4f0e5; */
+                    }
+
+                    .sliderNew_title {
+                        color: #f4f0e5;
+                        font-size: 18px;
+                        font-family: "Baskerville Old Face", "Times New Roman", Times, serif !important;
+                        padding: 0;
+                        text-align: center;
+                        height: auto !important;
+                    }
+
+                    .picBgset h1,
+                    .picBgset.toptit h1 {
+                        margin: 1.5em 0 .5em 0;
+                        padding: 1.5em 0;
+                        font-size: 14px;
+                    }
+
+                    .picBgset .links {
+                        width: 100% !important;
+                    }
+
+                    .picBgset .links a {
+                        /* height: 150vw; */
+                    }
+
+                    .picBgset img,
+                    .picBgset .links a>img {
+                        width: 100%;
+                    }
+
+                    .picBgset.bgtit {
+                        padding: 0 20px;
+                    }
+
+                    /* == 特企 / 活動 / 支線 ==*/
+                    .picBgset.bg_sp .links,
+                    .picBgset.bg_event .links,
+                    .picBgset.bg_brand>div .links {
+                        /* flex-direction: column; */
+                        display: block;
+                    }
+
+                    .picBgset.bg_sp .links a img {
+                        width: 100%;
+                    }
+
+                    /* == 新品 ==*/
+                    .picBgset.bg_news .links {
+                        flex-wrap: wrap;
+                        align-content: flex-start;
+                    }
+
+                    .picBgset.bg_news .links a {
+                        flex-basis: 50%;
+                        margin: 0;
+                        padding: 10px;
+                        /* height: 75vw !important; */
+                    }
+
+                    /* .picBgset.bg_news .links a:first-child {
+                        display: none;
+                    } */
+                    /* == 活動 == */
+                    .picBgset.bg_event {}
+
+                    /* == 單品分類 ==*/
+                    .picBgset.bg_intro {
+                        padding: 0 10px;
+                    }
+
+                    .picBgset.bg_intro .links {
+                        flex-wrap: wrap;
+                        align-content: flex-start;
+                    }
+
+                    .picBgset.bg_intro .links a {
+                        flex-basis: 50%;
+                        margin: 0;
+                        padding: 0 5px 17px 5px;
+                        /* height: 50vw !important; */
+                    }
+
+                    /* == 支線 ==*/
+                    .picBgset,
+                    .picBgset.bg_brand>div {
+                        position: relative;
+                        width: 100%;
+                    }
+
+                    .picBgset.bg_brand {
+                        background-color: transparent;
+                    }
+
+                    .picBgset.bg_brand>div {
+                        padding: 0;
+                    }
+
+                    .picBgset.bg_brand>div a {
+                        /* height: 60vw !important; */
+                        margin: 0;
+                    }
+
+                    .picBgset.bg_news .links a.showM,
+                    .picBgset.bg_intro .links a.showM {
+                        display: block !important;
+                    }
+
+                    #container .section-instagram {
+                        margin-top: 0 !important;
+                    }
+
+                    #section-instagram .newTitle {
+                        background: url(https://photo.polylulu.com.tw/photo/act/indextit/title_ig_m.jpg) no-repeat center top;
+                        background-size: auto 100%;
+                        height: 36px;
+                    }
+
+                    #section-instagram .newTitle h1 {
+                        display: none;
+                    }
+
+                    #container [class^="section-"] {
+                        margin-top: 0;
+                    }
+
+                    #section-categories {
+                        /* background-color: #f3efe3; */
+                        max-width: 100%;
+                        padding-top: 3em;
+                    }
+
+                    #section-categories .newTitle {
+                        background: url(https://photo.polylulu.com.tw/photo/act/indextit/title_bs_m.jpg) no-repeat center top;
+                        background-size: auto 100%;
+                        height: 36px;
+                    }
+
+                    #section-categories .newTitle h1,
+                    #section-categories {
+                        display: none;
+                    }
+                }
+            </style>
+            <div class="picBgset bgtit toptit">
+                <h1>風格企劃</h1>
+            </div>
+            <div class="picBgset bg_sp">
+                <div class="links">
+                    <a href="https://www.polylulu.com.tw/Miss.asp" target="_blank">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexSp-pc-01.jpg" alt=""
+                            class="showPC">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexSp-m-01.jpg" alt=""
+                            class="showM">
+                    </a>
+                    <a href="https://www.polylulu.com.tw/mua.asp" target="_blank">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexSp-pc-02.jpg" alt=""
+                            class="showPC">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexSp-m-02.jpg" alt=""
+                            class="showM">
+                    </a>
+                    <a href="https://www.polylulu.com.tw/polyact.asp?actno=2022072801&keyword=pim:2207280001"
+                        target="_blank">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexSp-pc-03.jpg" alt=""
+                            class="showPC">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexSp-m-03.jpg" alt=""
+                            class="showM">
+                    </a>
+                    <a href="https://www.polylulu.com.tw/polyact.asp?actno=2022072802&keyword=pim:2207280002"
+                        target="_blank">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexSp-pc-04.jpg" alt=""
+                            class="showPC">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexSp-m-04.jpg" alt=""
+                            class="showM">
+                    </a>
+                </div>
+            </div>
+            <div class="picBgset bgtit">
+                <h1>新品推薦</h1>
+            </div>
+            <div class="picBgset bg_news">
+                <div class="links">
+                    <a href="https://www.polylulu.com.tw/PDList2.asp?keyword=96070317&fromsearch=y" target="_blank">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexNews-pc-01.jpg" alt=""
+                            class="showPC">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexNews-m-01.jpg" alt=""
+                            class="showM">
+                    </a>
+                    <a href="https://www.polylulu.com.tw/PDList2.asp?keyword=96280230&fromsearch=y" target="_blank">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexNews-pc-02.jpg" alt=""
+                            class="showPC">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexNews-m-02.jpg" alt=""
+                            class="showM">
+                    </a>
+                    <a href="https://www.polylulu.com.tw/PDList2.asp?keyword=96220202&fromsearch=y" target="_blank">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexNews-pc-03.jpg" alt=""
+                            class="showPC">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexNews-m-03.jpg" alt=""
+                            class="showM">
+                    </a>
+                    <a href="https://www.polylulu.com.tw/PDList2.asp?keyword=91040396&fromsearch=y" target="_blank">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexNews-pc-04.jpg" alt=""
+                            class="showPC">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexNews-m-04.jpg" alt=""
+                            class="showM">
+                    </a>
+                    <a href="https://www.polylulu.com.tw/PDList2.asp?keyword=91290117&fromsearch=y" target="_blank"
+                        class="showPC">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexNews-pc-05.jpg" alt=""
+                            class="showPC">
+                    </a>
+                </div>
+                <a href="https://www.polylulu.com.tw/PDSalev2.asp?pi=6599297801" class="btn_more"><img
+                        src="https://photo.polylulu.com.tw/Photo/viewall.png" alt=""></a>
+            </div>
+
+            <div class="picBgset bgtit">
+                <h1>限時活動</h1>
+            </div>
+            <div class="picBgset bg_event">
+
+                <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexSale-pc-01.jpg" alt="" class="showPC">
+                <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexSale-m-01.jpg" alt="" class="showM">
+                <div class="links">
+                    <a href="https://www.polylulu.com.tw/PDSalev2.asp?pi=6599296401" target="_blank">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexSale-pc-02.jpg" alt=""
+                            class="showPC">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexSale-m-02.jpg" alt=""
+                            class="showM">
+                    </a>
+                    <a href="https://www.polylulu.com.tw/PDSalev2.asp?pi=6599296501" target="_blank">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexSale-pc-03.jpg" alt=""
+                            class="showPC">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexSale-m-03.jpg" alt=""
+                            class="showM">
+                    </a>
+                </div>
+                <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexSale-pc-04.jpg" alt="" class="showPC">
+                <img src="https://photo.polylulu.com.tw/photo/act/20220803/indexSale-m-04.jpg" alt="" class="showM">
+            </div>
+            <div class="picBgset bgtit">
+                <h1>熱門分類</h1>
+            </div>
+            <div class="picBgset bg_intro">
+                <div class="links">
+                    <a href="https://www.polylulu.com.tw/PDList2.asp?cid=111104&ob=D3" target="_blank">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/intro-pc-01.jpg" alt=""
+                            class="showPC">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/intro-m-01.jpg" alt="" class="showM">
+                    </a>
+                    <a href="https://www.polylulu.com.tw/PDList2.asp?cid=226623&ob=D3" target="_blank">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/intro-pc-02.jpg" alt=""
+                            class="showPC">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/intro-m-02.jpg" alt="" class="showM">
+                    </a>
+                    <a href="https://www.polylulu.com.tw/PDList2.asp?cid=111129&ob=D3" target="_blank">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/intro-pc-03.jpg" alt=""
+                            class="showPC">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/intro-m-03.jpg" alt="" class="showM">
+                    </a>
+                    <a href="https://www.polylulu.com.tw/PDList2.asp?cid=111101&ob=D3" target="_blank">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/intro-pc-04.jpg" alt=""
+                            class="showPC">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/intro-m-04.jpg" alt="" class="showM">
+                    </a>
+                    <a href="https://www.polylulu.com.tw/PDList2.asp?cid=112232&ob=D3" target="_blank">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/intro-pc-05.jpg" alt=""
+                            class="showPC">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/intro-m-05.jpg" alt="" class="showM">
+                    </a>
+                    <a href="https://www.polylulu.com.tw/PDList2.asp?keyword=%E7%9F%AD%E8%A4%B2&fromsearch=y"
+                        target="_blank">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/intro-pc-06.jpg" alt=""
+                            class="showPC">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220803/intro-m-06.jpg" alt="" class="showM">
+                    </a>
+                </div>
+            </div>
+            <div class="picBgset bgtit">
+                <h1>風格支線</h1>
+            </div>
+            <div class="picBgset bg_brand">
+                <div>
+                    <div class="links">
+                        <a href="https://www.polylulu.com.tw/POLY.asp" target="_blank">
+                            <img src="https://photo.polylulu.com.tw/photo/act/20220803/brand-pc-01.jpg" alt=""
+                                class="showPC">
+                            <img src="https://photo.polylulu.com.tw/photo/act/20220803/brand-m-01.jpg" alt=""
+                                class="showM">
+                        </a>
+                        <a href="https://www.polylulu.com.tw/mua.asp" target="_blank">
+                            <img src="https://photo.polylulu.com.tw/photo/act/20220803/brand-pc-02.jpg" alt=""
+                                class="showPC">
+                            <img src="https://photo.polylulu.com.tw/photo/act/20220803/brand-m-02.jpg" alt=""
+                                class="showM">
+                        </a>
+                        <a href="https://www.polylulu.com.tw/Miss.asp" target="_blank">
+                            <img src="https://photo.polylulu.com.tw/photo/act/20220803/brand-pc-03.jpg" alt=""
+                                class="showPC">
+                            <img src="https://photo.polylulu.com.tw/photo/act/20220803/brand-m-03.jpg" alt=""
+                                class="showM">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SALE區 ed-->
+        </div>
+        <!-- SALE ed -->
+
+        <!-- 自由版型 PC op -->
+        <section id="eventBN">
+
+        </section>
+        <!-- 自由版型 ed -->
+        <!-- IG op -->
+        <section id="areaIG" class="wow fadeIn" data-wow-duration="1.2s" data-wow-delay="0.3s"
+            style="visibility: visible; animation-duration: 1.2s; animation-delay: 0.3s; animation-name: fadeIn;">
+            <div>
+                <!-- m061p3g4 -->
+                <!-- 原始版型TITLE op -->
+                <!-- <div class="hugeTitle">
+                    <div class="row">
+                        <div class="col-lg-5" target="_blank"><i class="icon"><u class="icon-i_media_ig"></u></i>
+                            <span>#POLYLULU_TW</span>
+                            <h1>INSTAGRAM</h1>
+                            <img src="./Source/images/zh-cht/icons/i_vvv.svg" alt="" class="icon_vvv"></div>
+                        <div class="col-lg-7">
+                            <p class="mb-3">一起在Instagram #POLYLULU<br>分享屬於妳的時尚穿搭及日常打扮，變美就是這麼簡單</p>
+                            <a title="" href="https://www.instagram.com/polylulu_tw/" target="_blank" type="button" class="btn btn-primary btn-sm">更多分享</a>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- 原始版型TITLE ed -->
+                <div class="picBgset bgtit tit_ig">
+                    <img src="https://photo.polylulu.com.tw/photo/act/indextit/title_ig_m.jpg" alt="" class="showM">
+
+                </div>
+                <div class="wrap">
+                    <!-- IG-info op -->
+                    <style>
+                        .tit_ig {
+                            background: url(https://photo.polylulu.com.tw/photo/act/indextit/title_ig_pc.jpg) no-repeat center center;
+                            height: 80px;
+                        }
+
+                        .picBgset.tit_ig h1 {
+                            border-top: 0;
+                        }
+
+                        @keyframes picHover {
+                            0% {
+                                padding: 0;
+                            }
+
+                            100% {
+                                padding: 10px;
+                            }
+                        }
+
+                        .block-instagram {
+                            width: 100%;
+                            display: flex;
+                            flex-wrap: nowrap;
+                            height: 17vw;
+                        }
+
+                        .i-item {
+                            flex-basis: calc(100% / 6);
+                        }
+
+                        .i-item a {
+                            display: block;
+                            background-color: #ffffff;
+                            border: 1px solid #fff;
+                        }
+
+                        .i-item a:hover {
+                            animation: picHover .3s forwards ease;
+                            border: 1px solid #eee;
+                        }
+
+                        .i-item a img {
+                            width: 100%;
+                        }
+
+                        @media (max-width: 1199px) {
+                            .tit_ig {
+                                width: 100%;
+                                background-size: 180% auto;
+                                height: 60px;
+                            }
+                        }
+
+                        @media (max-width: 767px) {
+                            .i-item {
+                                flex-basis: 50%;
+                            }
+
+                            .i-item a:hover {
+                                animation: inherit;
+                            }
+
+                            .block-instagram {
+                                flex-wrap: wrap;
+                                height: auto !important;
+                            }
+                        }
+                    </style>
+                    <div class="block-instagram">
+                        <div class="i-item">
+                            <a href="https://www.instagram.com/polylulu_tw/" target="_blank"
+                                rel="noopener noreferrer"><img
+                                    src="https://photo.polylulu.com.tw/photo/act/ig_pic/ig-20220309-01.jpg"></a>
+                        </div>
+                        <div class="i-item">
+                            <a href="https://www.instagram.com/polylulu_tw/" target="_blank" rel="noopener noreferrer"
+                                class=""><img
+                                    src="https://photo.polylulu.com.tw/photo/act/ig_pic/ig-20220309-02.jpg"></a>
+                        </div>
+                        <div class="i-item">
+                            <a href="https://www.instagram.com/polylulu_tw/" target="_blank" rel="noopener noreferrer"
+                                class=""><img
+                                    src="https://photo.polylulu.com.tw/photo/act/ig_pic/ig-20220309-03.jpg"></a>
+                        </div>
+                        <div class="i-item">
+                            <a href="https://www.instagram.com/polylulu_tw/" target="_blank"
+                                rel="noopener noreferrer"><img
+                                    src="https://photo.polylulu.com.tw/photo/act/ig_pic/ig-20220309-04.jpg"></a>
+                        </div>
+                        <div class="i-item">
+                            <a href="https://www.instagram.com/polylulu_tw/" target="_blank" rel="noopener noreferrer"
+                                class=""><img
+                                    src="https://photo.polylulu.com.tw/photo/act/ig_pic/ig-20220309-05.jpg"></a>
+                        </div>
+                        <div class="i-item">
+                            <a href="https://www.instagram.com/polylulu_tw/" target="_blank"
+                                rel="noopener noreferrer"><img
+                                    src="https://photo.polylulu.com.tw/photo/act/ig_pic/ig-20220309-06.jpg"></a>
+                        </div>
+                    </div>
+                    <!-- IG-info op -->
+                </div>
+            </div>
+        </section>
+        <!-- IG ed -->
+        <!-- BEST SELLERS op -->
+        <section id="areaBEST" class="pt-5 wow fadeIn" data-wow-duration="1.2s" data-wow-delay="0.3s">
+            <div class="hugeTitle mb-3">
+                <h1>BEST SELLERS</h1>
+                <img src="./Source/images/zh-cht/icons/i_vvv.svg" alt="" class="icon_vvv">
+            </div>
+            <div class="container">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="bestAll-tab" data-toggle="pill" href="#bestAll" role="tab"
+                            aria-controls="bestAll" aria-selected="true"><img
+                                src="./Source/images/zh-cht/icons/icon_other_best_all.svg" title=""
+                                alt=""><span>ALL</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="bestTop-tab" data-toggle="pill" href="#bestTop" role="tab"
+                            aria-controls="bestTop" aria-selected="false"><img
+                                src="./Source/images/zh-cht/icons/icon_other_best_top.svg" title="" alt="">
+                            <span>TOP</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="bestBottom-tab" data-toggle="pill" href="#bestBottom" role="tab"
+                            aria-controls="bestBottom" aria-selected="false"><img
+                                src="./Source/images/zh-cht/icons/icon_other_best_bottom.svg" title="" alt="">
+                            <span>BOTTOM</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="bestDress-tab" data-toggle="pill" href="#bestDress" role="tab"
+                            aria-controls="bestDress" aria-selected="false"><img
+                                src="./Source/images/zh-cht/icons/icon_other_best_dress.svg" title=""
+                                alt=""><span>DRESS</span></a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="bestAll" role="tabpanel" aria-labelledby="bestAll-tab">
+                        <div class="best_items">
+                            <div class="best_items_scroll">
+                                <ul>
+                                    <li>
+                                        <figure>
+                                            <a title="" href="product.html">
+                                                <img src="https://photo.polylulu.com.tw/Photo/PDImg/92070098/92070098.jpg "
+                                                    title="" alt="">
+                                                <figcaption>
+                                                    <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span
+                                                        class="price-sale">NTD.598</span> <span
+                                                        class="tag-sale">88折</span>
+                                                </figcaption>
+                                            </a>
+                                        </figure>
+
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <a title="" href="product.html">
+                                                <img src="https://photo.polylulu.com.tw/Photo/PDImg/96230188/96230188_A33.jpg "
+                                                    title="" alt="">
+                                                <figcaption>
+                                                    <div>親膚舒適寬領坑紋長袖上衣</div><span class="price-sale">NTD.598</span>
+                                                </figcaption>
+                                            </a>
+                                        </figure>
+
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <a title="" href="product.html">
+                                                <img src="https://photo.polylulu.com.tw/Photo/PDImg/91030099/91030099_A33.jpg "
+                                                    title="" alt="">
+                                                <figcaption>
+                                                    <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span
+                                                        class="price-sale">NTD.598</span> <span
+                                                        class="tag-sale">88折</span>
+                                                </figcaption>
+                                            </a>
+                                        </figure>
+
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <a title="" href="product.html">
+                                                <img src="https://photo.polylulu.com.tw/Photo/PDImg/96070236/96070236_A42.jpg "
+                                                    title="" alt="">
+                                                <figcaption>
+                                                    <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span
+                                                        class="price-sale">NTD.598</span> <span
+                                                        class="tag-sale">88折</span>
+                                                </figcaption>
+                                            </a>
+                                        </figure>
+
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <a title="" href="product.html">
+                                                <img src="https://photo.polylulu.com.tw/Photo/PDImg/96210113/96210113.jpg "
+                                                    title="" alt="">
+                                                <figcaption>
+                                                    <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span
+                                                        class="price-sale">NTD.598</span> <span
+                                                        class="tag-sale">88折</span>
+                                                </figcaption>
+                                            </a>
+                                        </figure>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="bestTop" role="tabpanel" aria-labelledby="bestTop-tab">
+                        <div class="best_items">
+                            <div class="best_items_scroll">
+                                <ul>
+                                    <li>
+                                        <figure>
+                                            <a title="" href="product.html">
+                                                <img src="https://photo.polylulu.com.tw/Photo/PDImg/91030099/91030099_A33.jpg "
+                                                    title="" alt="">
+                                                <figcaption>
+                                                    <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span
+                                                        class="price-sale">NTD.598</span> <span
+                                                        class="tag-sale">88折</span>
+                                                </figcaption>
+                                            </a>
+                                        </figure>
+
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <a title="" href="product.html">
+                                                <img src="https://photo.polylulu.com.tw/Photo/PDImg/93030054/93030054.jpg "
+                                                    title="" alt="">
+                                                <figcaption>
+                                                    <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span
+                                                        class="price-sale">NTD.598</span> <span
+                                                        class="tag-sale">88折</span>
+                                                </figcaption>
+                                            </a>
+                                        </figure>
+
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <a title="" href="product.html">
+                                                <img src="https://photo.polylulu.com.tw/Photo/PDImg/91010384/91010384_A33.jpg "
+                                                    title="" alt="">
+                                                <figcaption>
+                                                    <div>親膚舒適寬領坑紋長袖上衣</div><span class="price-sale">NTD.598</span>
+                                                </figcaption>
+                                            </a>
+                                        </figure>
+
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <a title="" href="product.html">
+                                                <img src="https://photo.polylulu.com.tw/Photo/PDImg/91060054/91060054_A33.jpg "
+                                                    title="" alt="">
+                                                <figcaption>
+                                                    <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span
+                                                        class="price-sale">NTD.598</span> <span
+                                                        class="tag-sale">88折</span>
+                                                </figcaption>
+                                            </a>
+                                        </figure>
+
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <a title="" href="product.html">
+                                                <img src="https://photo.polylulu.com.tw/Photo/PDImg/91040212/91040212_A68.jpg "
+                                                    title="" alt="">
+                                                <figcaption>
+                                                    <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span
+                                                        class="price-sale">NTD.598</span> <span
+                                                        class="tag-sale">88折</span>
+                                                </figcaption>
+                                            </a>
+                                        </figure>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="bestBottom" role="tabpanel" aria-labelledby="bestBottom-tab">
+                        <div class="best_items">
+                            <div class="best_items_scroll">
+                                <ul>
+                                    <li>
+                                        <figure>
+                                            <a title="" href="product.html">
+                                                <img src="https://photo.polylulu.com.tw/Photo/PDImg/96210113/96210113.jpg "
+                                                    title="" alt="">
+                                                <figcaption>
+                                                    <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span
+                                                        class="price-sale">NTD.598</span> <span
+                                                        class="tag-sale">88折</span>
+                                                </figcaption>
+                                            </a>
+                                        </figure>
+
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <a title="" href="product.html">
+                                                <img src="https://photo.polylulu.com.tw/Photo/PDImg/95260247/95260247_A37.jpg "
+                                                    title="" alt="">
+                                                <figcaption>
+                                                    <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span
+                                                        class="price-sale">NTD.598</span> <span
+                                                        class="tag-sale">88折</span>
+                                                </figcaption>
+                                            </a>
+                                        </figure>
+
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <a title="" href="product.html">
+                                                <img src="https://photo.polylulu.com.tw/Photo/PDImg/95260247/95260247_A33.jpg "
+                                                    title="" alt="">
+                                                <figcaption>
+                                                    <div>親膚舒適寬領坑紋長袖上衣</div><span class="price-sale">NTD.598</span>
+                                                </figcaption>
+                                            </a>
+                                        </figure>
+
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <a title="" href="product.html">
+                                                <img src="https://photo.polylulu.com.tw/Photo/PDImg/96070227/96070227_A06.jpg "
+                                                    title="" alt="">
+                                                <figcaption>
+                                                    <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span
+                                                        class="price-sale">NTD.598</span> <span
+                                                        class="tag-sale">88折</span>
+                                                </figcaption>
+                                            </a>
+                                        </figure>
+
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <a title="" href="product.html">
+                                                <img src="https://photo.polylulu.com.tw/Photo/PDImg/96070236/96070236_A42.jpg "
+                                                    title="" alt="">
+                                                <figcaption>
+                                                    <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span
+                                                        class="price-sale">NTD.598</span> <span
+                                                        class="tag-sale">88折</span>
+                                                </figcaption>
+                                            </a>
+                                        </figure>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="bestDress" role="tabpanel" aria-labelledby="bestDress-tab">
+                        <div class="best_items">
+                            <div class="best_items_scroll">
+                                <ul>
+                                    <li>
+                                        <figure>
+                                            <a title="" href="product.html">
+                                                <img src="https://photo.polylulu.com.tw/Photo/PDImg/92310833/92310833_A26.jpg "
+                                                    title="" alt="">
+                                                <figcaption>
+                                                    <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span
+                                                        class="price-sale">NTD.598</span> <span
+                                                        class="tag-sale">88折</span>
+                                                </figcaption>
+                                            </a>
+                                        </figure>
+
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <a title="" href="product.html">
+                                                <img src="https://photo.polylulu.com.tw/Photo/PDImg/92310759/92310759.jpg "
+                                                    title="" alt="">
+                                                <figcaption>
+                                                    <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span
+                                                        class="price-sale">NTD.598</span> <span
+                                                        class="tag-sale">88折</span>
+                                                </figcaption>
+                                            </a>
+                                        </figure>
+
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <a title="" href="product.html">
+                                                <img src="https://photo.polylulu.com.tw/Photo/PDImg/92310713/92310713_B31.jpg "
+                                                    title="" alt="">
+                                                <figcaption>
+                                                    <div>親膚舒適寬領坑紋長袖上衣</div><span class="price-sale">NTD.598</span>
+                                                </figcaption>
+                                            </a>
+                                        </figure>
+
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <a title="" href="product.html">
+                                                <img src="https://photo.polylulu.com.tw/Photo/PDImg/96070236/96070236_A42.jpg "
+                                                    title="" alt="">
+                                                <figcaption>
+                                                    <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span
+                                                        class="price-sale">NTD.598</span> <span
+                                                        class="tag-sale">88折</span>
+                                                </figcaption>
+                                            </a>
+                                        </figure>
+
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <a title="" href="product.html">
+                                                <img src="https://photo.polylulu.com.tw/Photo/PDImg/96210113/96210113.jpg "
+                                                    title="" alt="">
+                                                <figcaption>
+                                                    <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span
+                                                        class="price-sale">NTD.598</span> <span
+                                                        class="tag-sale">88折</span>
+                                                </figcaption>
+                                            </a>
+                                        </figure>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- BEST SELLERS ed -->
+        <!-- NEW ARRIVALS op-->
+        <section id="areaNEWpd" class="pb-5 wow fadeIn" data-wow-duration="1.2s" data-wow-delay="0.3s">
+            <div class="container">
+                <div class="hugeTitle mt-5 mb-3">
+                    <h1>NEW ARRIVALS</h1>
+                    <img src="/Source/images/zh-cht/icons/i_vvv.svg" alt="" class="icon_vvv">
+                </div>
+                <div class="new_items">
+                    <figure>
+                        <a title='' href='/zh-cht/pol/product?saleid=9101052601&color=A05'>
+                            <img src=''>
+                            <figcaption>
+                                <div>法式手寫刺繡華夫格短袖TEE 中大尺碼上衣</div> <span class='price-old'>NT.590</span> <span
+                                    class='price-sale'>NTD.590</span> <span class='tag-sale'>SHOP</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure>
+                        <a title='' href='/zh-cht/pol/product?saleid=9104037001&color=A48'>
+                            <img src=''>
+                            <figcaption>
+                                <div>MISS.蜂蜜蛋糕配色條紋短袖襯衫 中大尺碼上衣</div> <span class='price-old'>NT.590</span> <span
+                                    class='price-sale'>NTD.590</span> <span class='tag-sale'>SHOP</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure>
+                        <a title='' href='/zh-cht/pol/product?saleid=9622017903&color=A33'>
+                            <img
+                                src='https://app-resource.polylulu.com.tw/app_img/96220179/C489C4DD-80DE-4A61-B746-D313EF95DC1A.jpg'>
+                            <figcaption>
+                                <div>2/23(P)短褲</div> <span class='price-old'>NT.620</span> <span
+                                    class='price-sale'>NTD.620</span> <span class='tag-sale'>SHOP</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure>
+                        <a title='' href='/zh-cht/pol/product?saleid=9101052001&color=A05'>
+                            <img
+                                src='https://app-resource.polylulu.com.tw/app_img/91010520/B05BE0EB-796F-4744-8DEF-54EBF406CB22.jpg'>
+                            <figcaption>
+                                <div>2/23(P)T恤</div> <span class='price-old'>NT.670</span> <span
+                                    class='price-sale'>NTD.670</span> <span class='tag-sale'>SHOP</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure>
+                        <a title='' href='/zh-cht/pol/product?saleid=9101052004&color=A33'>
+                            <img
+                                src='https://app-resource.polylulu.com.tw/app_img/91010520/F45E0680-6BB8-48FD-BA10-74BD897BAFFE.jpg'>
+                            <figcaption>
+                                <div>2/23(P)T恤</div> <span class='price-old'>NT.670</span> <span
+                                    class='price-sale'>NTD.670</span> <span class='tag-sale'>SHOP</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure>
+                        <a title='' href='/zh-cht/pol/product?saleid=9103013901&color=A24'>
+                            <img
+                                src='https://app-resource.polylulu.com.tw/app_img/91030139/3EAEE7AA-E42D-49AA-A11B-05DBA27C5721.jpg'>
+                            <figcaption>
+                                <div>2/23(P)背心小可愛</div> <span class='price-old'>NT.720</span> <span
+                                    class='price-sale'>NTD.720</span> <span class='tag-sale'>SHOP</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure>
+                        <a title='' href='/zh-cht/pol/product?saleid=9103013902&color=A33'>
+                            <img
+                                src='https://app-resource.polylulu.com.tw/app_img/91030139/98277D7C-4BC7-4803-83A2-0B177646CCD3.jpg'>
+                            <figcaption>
+                                <div>2/23(P)背心小可愛</div> <span class='price-old'>NT.720</span> <span
+                                    class='price-sale'>NTD.720</span> <span class='tag-sale'>SHOP</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure>
+                        <a title='' href='/zh-cht/pol/product?saleid=9103013903&color=A42'>
+                            <img
+                                src='https://app-resource.polylulu.com.tw/app_img/91030139/A4BD294A-A13F-4AFE-AA88-B488783EBFEA.jpg'>
+                            <figcaption>
+                                <div>2/23(P)背心小可愛</div> <span class='price-old'>NT.720</span> <span
+                                    class='price-sale'>NTD.720</span> <span class='tag-sale'>SHOP</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure>
+                        <a title='' href='/zh-cht/pol/product?saleid=9103014401&color=A04'>
+                            <img
+                                src='https://app-resource.polylulu.com.tw/app_img/91030144/FDA828A3-A8B5-4038-B21D-F78A479E2703.jpg'>
+                            <figcaption>
+                                <div>2/23(P)背心</div> <span class='price-old'>NT.760</span> <span
+                                    class='price-sale'>NTD.760</span> <span class='tag-sale'>SHOP</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+
+                </div>
+                <div class="btnMore">
+                    <a title="" href="" class="btn btn-outline-primary"> <span>MORE LOOKS <i class="icon"><u
+                                    class="icon-i_gotop"></u></i></span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+        <!-- NEW ARRIVALS ed-->
+
+        <!-- BODY SHAPE op-->
+        <section id="areaSHAPE" class="py-5 wow fadeIn" data-wow-duration="1.2s" data-wow-delay="0.3s">
+            <div class="hugeTitle mb-3">
+                <span>挑選最適合您的款式</span>
+                <h1>SHOP BY BODY SHAPE</h1>
+                <img src="./Source/images/zh-cht/icons/i_vvv.svg" alt="" class="icon_vvv">
+            </div>
+            <div class="container">
+                <div class="shape_items">
+                    <div class="shape_items_scroll">
+                        <ul>
+                            <li>
+                                <figure>
+                                    <a title=""
+                                        href="http://test.polylulu.com.tw/zh-cht/pol/productstyle?KeyWord=pim:1610040001&actno=4445367B-3439-4432-382D-354139412D34">
+                                        <img src="./Source/images/zh-cht/icons/body_type01.jpg" title="" alt="">
+                                        <figcaption>
+                                            <h4 class="h4">長方形</h4>
+                                            <p>
+                                                <u class="h4">RECTANGLE</u> 直線條輪廓
+                                                <br>肩膀與臀部大致等寬<br>腰身較不明顯<br>大腿較為粗壯<span
+                                                    class="btn btn-outline-primary btn-sm mt-3">SHOP</span>
+                                            </p>
+                                        </figcaption>
+                                    </a>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <a title=""
+                                        href="http://test.polylulu.com.tw/zh-cht/pol/productstyle?KeyWord=pim:1910220002&actno=9E9567B6-004E-4BFE-9348-893167399639">
+                                        <img src="./Source/images/zh-cht/icons/body_type02.jpg" title="" alt="">
+                                        <figcaption>
+                                            <h4 class="h4">西洋梨形</h4>
+                                            <p><u class="h4">PEAR</u>上半身較為纖瘦 <br>較小的胸圍 <br>纖細的腰圍 <br>較豐滿的臀部線條 <span
+                                                    class="btn btn-outline-primary btn-sm mt-3">SHOP</span></p>
+
+                                        </figcaption>
+                                    </a>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <a title=""
+                                        href="http://test.polylulu.com.tw/zh-cht/pol/productstyle?KeyWord=pim:1610040003&actno=8189CF48-5C5A-4EF6-90F3-120CCFB25219">
+                                        <img src="./Source/images/zh-cht/icons/body_type03.jpg" title="" alt="">
+                                        <figcaption>
+                                            <h4 class="h4">草莓型</h4>
+                                            <p><u class="h4">STRAWBERRY</u> 較寬的肩膀
+                                                <br>豐滿的胸圍<br>纖細的腰圍<br>較小的臀圍<br>修長的腿部<span
+                                                    class="btn btn-outline-primary btn-sm mt-3">SHOP</span></p>
+                                        </figcaption>
+                                    </a>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <a title=""
+                                        href="http://test.polylulu.com.tw/zh-cht/pol/productstyle?KeyWord=pim:1610040004&actno=F96C791F-D260-4AC5-8094-3E7228B99BD2">
+                                        <img src="./Source/images/zh-cht/icons/body_type04.jpg" title="" alt="">
+                                        <figcaption>
+                                            <h4 class="h4">沙漏型</h4>
+                                            <p><u class="h4">HOURGLASS</u> 肩膀與臀部大致等寬<br>非常纖細的腰圍<br>較大的胸圍<br>肉感的臀部<span
+                                                    class="btn btn-outline-primary btn-sm mt-3">SHOP</span></p>
+                                        </figcaption>
+                                    </a>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <a title=""
+                                        href="http://test.polylulu.com.tw/zh-cht/pol/productstyle?KeyWord=pim:1610040005&actno=F42882A6-9E94-4EBE-B4EA-678E96ED0754">
+                                        <img src="./Source/images/zh-cht/icons/body_type05.jpg" title="" alt="">
+                                        <figcaption>
+                                            <h4 class="h4">橢圓形</h4>
+                                            <p><u class="h4">OVAL</u> 明顯的中段<br>較大的胸圍<br>較寬的臀部<br>纖細的腿部<span
+                                                    class="btn btn-outline-primary btn-sm mt-3">SHOP</span></p>
+                                        </figcaption>
+                                    </a>
+                                </figure>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- BODY SHAPE ed-->
+    </div>
+
+    <!-- Main Content op -->
+    <footer>
+        <div class="wrap">
+            <div class="areaLinks">
+                <ul class="menuLv1">
+                    <li><a title="" href="" class="menuLv1_link"><span>ABOUT US</span><b>關於我們</b><i class="icon_open"> +
+                            </i></a>
+                        <ul class="menuLv2">
+                            <li> <a title="" href="about.html">品牌優勢</a></li>
+                            <li> <a title="" href="privacy.html">隱私權保護</a></li>
+                            <li> <a title="" href="newslist.html">最新消息</a></li>
+                            <li> <a title="" href="fraud_prevention.html">防詐四步驟</a></li>
+                            <li> <a href="cooperation.html">廠商合作</a></li>
+                            <li> <a title="" href="store.html">門市資訊</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="menuLv1">
+                    <li><a title="" href="" class="menuLv1_link"><span>HOW TO ORDER</span><b>如何訂購</b><i
+                                class="icon_open"> + </i></a>
+                        <ul class="menuLv2">
+                            <li><a title="" href="faq.html">常見問題</a></li>
+                            <li><a title="" href="service.html">客服信箱</a></li>
+                            <li><a title="" href="how2order.html">訂購流程</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="menuLv1">
+                    <li><a title="" href="" class="menuLv1_link"><span>MEMBER ONLY</span><b>會員專屬</b><i
+                                class="icon_open"> + </i></a>
+                        <ul class="menuLv2">
+                            <li>
+                                <a title="" href="login.html">加入會員</a>
+                            </li>
+                            <li>
+                                <a title="" href="orderlist.html">訂單查詢</a>
+                            </li>
+                            <li>
+                                <a title="" href="terms.html">會員條款</a>
+                            </li>
+                            <li>
+                                <a title="" href="memberdiscount.html">會員優惠<u class="icon_shiny">UP!</u></a>
+                            </li>
+                            <li>
+                                <a title="" href="aboutbonus.html">購物金&紅利金</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="areaMedia">
+                <ul class="navMedia">
+                    <li>
+                        <a title="" href="https://www.facebook.com/PolyLuluTW/" target="_blank"><i class="icon"><u
+                                    class="icon-i_media_fb"></u></i></a>
+                    </li>
+                    <li>
+                        <a title="" href="https://www.instagram.com/polylulu_tw/" target="_blank"><i class="icon"><u
+                                    class="icon-i_media_ig"></u></i></a>
+                    </li>
+                    <li>
+                        <a title="" href="https://line.me/R/ti/p/%40aal2550w" target="_blank"><i class="icon"><u
+                                    class="icon-i_media_line"></u></i></a>
+                    </li>
+                    <li>
+                        <a title="" href="store.html" target="_blank"><i class="icon"><u
+                                    class="icon-i_media_shop"></u></i></a>
+                    </li>
+                    <li>
+                        <a title="" href="" target="_blank"><i class="icon"><u class="icon-i_media_app"></u></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="line_vertical"></div>
+            <div class="areaService">
+                <h1>CUSTOMER SERVICE</h1>
+                <div class="info">
+                    <a title="" href="service.html" class="link_underline"><i class="icon"><u
+                                class="icon-i_comment"></u></i>Contact us</a>
+                    <p>+886 2-2760-6658
+                        <br>週一至週五
+                        <br>09:30 - 12:30
+                        <br>13:30 - 18:30
+                    </p>
+                </div>
+            </div>
+            <div class="areaSubscribe">
+                <h1>WEEKLY SUBSCRIBE</h1>
+                <div class="info"><input class="form-control" type="email" placeholder="EMAIL">
+                    <a title="" href="" class="btn btn-outline-primary">SEND</a>
+                </div>
+            </div>
+            <div class="areaCopyright">Copyright© 2020 Poly Lulu All Rights Reserved.</div>
+        </div>
+    </footer>
+</body>
+
+<script src="./Source/js/zh-cht/vendor/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="./Source/js/zh-cht/vendor/popper.min.js?20190506"></script>
+<script src="./Source/js/zh-cht/vendor/bootstrap.min.js?20190506"></script>
+<script src="./Source/js/zh-cht/vendor/jquery.min.js?20190506"></script>
+<script src="./Source/js/zh-cht/vendor/bootstrap.bundle.min.js"></script>
+<script src="./Source/js/zh-cht/vendor/wow.min.js?20190506"></script>
+<script src="./Source/js/zh-cht/vendor/slick.js"></script>
+<script src="./Source/js/zh-cht/vendor/all.min.js"></script>
+<script src="./Source/js/zh-cht/vendor/jquery.bootstrap-touchspin.min.js"></script>
+<script src="./Source/js/zh-cht/vendor/jquery.magnific-popup.min.js"></script>
+<script src="./Source/js/zh-cht/main.js"></script>
+<script type="text/javascript">
+    new WOW().init();
+
+    //<!-- 蓋版 + 置頂的 JS //// op -->
+    var cookie01 = 0; //蓋板
+    var cookie02 = 1; //置頂
+    $(document).ready(function () {
+        if (cookie01 == 0) { //有cookie-蓋版
+            $("#adModal").modal('hide');
+            // console.log("蓋板出現過了!");
+        } else { //沒cookie-蓋版
+            $("#adModal").modal('show');
+        }
+
+        if (cookie02 == 0) { //有cookie置頂
+            // console.log("置頂出現過了!");
+        } else { //沒cookie
+            $('.toptopBN').addClass('toptopBNIn');
+            $("#mainArea").addClass('moveDown');
+            $('#closeAD').on('click', function () {
+                $('.toptopBN').addClass('toptopBNOut');
+                $('.toptopBN').fadeOut(300);
+                $("#mainArea").removeClass('moveDown');
+                $('.toptopBN').removeClass('toptopBNIn');
+            });
+        }
+    });
+    //<!-- 蓋版 + 置頂的 JS //// -->
+</script>
+<script type="text/javascript">
+    // new WOW().init();
+
+    // var couponjson = <%= strcouponjson %>;
+
+    $(document).ready(function () {
+        $(".indexTopBN").slick({
+                    dots: true,
+                    fade: true,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    arrows: false
+                });
+
+    
+
+        $(".sliderBN").slick({
+            dots: false,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 4.5,
+            slidesToScroll: 1,
+            responsive: [{
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 3.5,
+                        slidesToScroll: 1
+                    }
+                }, {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2.5,
+                        slidesToScroll: 1
+                    }
+                }, {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1.5,
+                        slidesToScroll: 1,
+                        arrows: false
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+        });
+
+        //優惠券領取
+        $('#couponBOX li').on('click', function () {
+            const QQ = $(this).index();
+            var getCouponID = $('#couponBOX li').eq(QQ).data('coupon');
+
+
+            var data = {
+                "APIName": "InsertMemberDisCoupon",
+                "ID": getCouponID
+            };
+            console.log(data);
+            $.ajax({
+                type: "POST",
+                url: "/_zh-cht/ajaxMember.ashx",
+                data: data,
+                datatype: "json",
+                async: false,
+                cache: false,
+                success: function (data) {
+                    result = data;
+                    if (result.Status.code === '00') {
+                        alert(result.Alert.message);
+                        $('#couponBOX li').eq(QQ).find('button').addClass('hasGET');
+                        // location.reload();
+                    }
+                    else if (result.Status.code === '03')
+                    {
+                        alert("請先登入會員");
+                        location.href = '/login';
+                    }
+                    else
+                    {
+                        alert(result.Alert.message);
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert(XMLHttpRequest.responseText);
+                }
+            });
+
+            //if (couponDATA[QQ].couponQTY === 0) {
+            //    alert('此優惠券已額滿!');
+            //    $('#couponBOX li').eq(QQ).find('button').addClass('hasFULL');
+            //} else if (couponDATA[QQ].couponGET == '01') {
+            //    alert('領取成功!');
+            //    $('#couponBOX li').eq(QQ).find('button').addClass('hasGET').attr('data-status', '02');
+            //    // $('#couponBOX li').eq(QQ);
+            //} else if ($(this).find('button').hasClass('hasGET')) {
+            //    alert('此優惠券已領過!');
+            //} else {
+            //    alert('此優惠券已領過!');
+            //    $('#couponBOX li').eq(QQ).find('button').addClass('hasGET');
+            //}
+            // localStorage.setItem('hasCOUPON', 'yes');
+            // localStorage.setItem('coupon', $('#couponBOX').html());
+        });
+    });
+
+    //優惠卷json
+    data = {
+  "Result": {
+    "ListDisCoupon": [
+      {
+        "DisCouponID": "20221019000001",
+        "DisCouponStartDate": "2022-10-19 00:00:00",
+        "DisCouponEndDate": "2022-10-29 23:59:59",
+        "DisCouponName": "測試",
+        "Description": "",
+        "Notice": "",
+        "DisCouponType": "2",
+        "DisCouponValue": 70.0,
+        "DisCouponGetStartDate": "2022-10-19 00:00:00",
+        "DisCouponGetEndDate": "2022-10-29 23:59:59",
+        "Status": "01",
+        "StatusTitle": "未領取",
+        "DisCouponUseDate": "N",
+        "DisCouponOrdNo": "",
+        "DisCouponNum": 1,
+        "MemGetDate": "",
+        "Channel": "1"
+      },
+      {
+        "DisCouponID": "20221020000001",
+        "DisCouponStartDate": "2022-10-20 00:00:00",
+        "DisCouponEndDate": "2022-10-29 23:59:59",
+        "DisCouponName": "折價優惠券TEST",
+        "Description": "折價活動說明1",
+        "Notice": "注意事項3本券滿額499折99",
+        "DisCouponType": "1",
+        "DisCouponValue": 99.0,
+        "DisCouponGetStartDate": "2022-10-20 00:00:00",
+        "DisCouponGetEndDate": "2022-10-28 23:59:59",
+        "Status": "02",
+        "StatusTitle": "未使用",
+        "DisCouponUseDate": "",
+        "DisCouponOrdNo": "",
+        "DisCouponNum": 993,
+        "MemGetDate": "",
+        "Channel": "1"
+      },
+      {
+        "DisCouponID": "20221020000002",
+        "DisCouponStartDate": "2022-10-19 00:00:00",
+        "DisCouponEndDate": "2022-10-29 23:59:59",
+        "DisCouponName": "折扣優惠券滿八百85折",
+        "Description": "活動說明1",
+        "Notice": "注意事項3本券滿800元方可打85折",
+        "DisCouponType": "2",
+        "DisCouponValue": 85.0,
+        "DisCouponGetStartDate": "2022-10-20 00:00:00",
+        "DisCouponGetEndDate": "2022-10-28 23:59:59",
+        "Status": "01",
+        "StatusTitle": "未領取",
+        "DisCouponUseDate": "N",
+        "DisCouponOrdNo": "",
+        "DisCouponNum": 10,
+        "MemGetDate": "",
+        "Channel": "1"
+      },
+      {
+        "DisCouponID": "20221020000002",
+        "DisCouponStartDate": "2022-10-19 00:00:00",
+        "DisCouponEndDate": "2022-10-29 23:59:59",
+        "DisCouponName": "折扣優惠券滿八百85折",
+        "Description": "活動說明1",
+        "Notice": "注意事項3本券滿800元方可打85折",
+        "DisCouponType": "2",
+        "DisCouponValue": 85.0,
+        "DisCouponGetStartDate": "2022-10-20 00:00:00",
+        "DisCouponGetEndDate": "2022-10-28 23:59:59",
+        "Status": "01",
+        "StatusTitle": "未領取",
+        "DisCouponUseDate": "N",
+        "DisCouponOrdNo": "",
+        "DisCouponNum": 0,
+        "MemGetDate": "",
+        "Channel": "1"
+      }
+    ]
+  },
+  "Status": { "code": "00", "info": "" },
+//   "Status": { "code": "01", "info": "查無電子優惠券資料" },
+  "Alert": null
+};
+
+    if (data.Status.code == '00') {
+        // var couponDATA = [];
+        // var coouponOBJ = {};
+        for (let c = 0; c < data.Result.ListDisCoupon.length; c++) {
+            // const element = array[c];
+            let num = Number([c]) + 1;
+
+            const couponPic = '<li class="coupon_item" data-coupon="' + data.Result.ListDisCoupon[c].DisCouponID + '" data-status="' + data.Result.ListDisCoupon[c].Status + '" data-qty="' + data.Result.ListDisCoupon[c].DisCouponNum + '"><button type="button" ><img src="https://photo.polylulu.com.tw/photo/act/20221111/coupon-' + num + '.png" alt=""></button></li>';
+            // console.log(data.Result.ListDisCoupon[c].DisCouponID);
+            // const coouponOBJ = {
+            //     'couponIDD': data.Result.ListDisCoupon[c].DisCouponID,
+            //     'couponQTY': data.Result.ListDisCoupon[c].DisCouponNum,
+            //     'couponGET': data.Result.ListDisCoupon[c].Status
+            // }
+
+            // couponDATA.push(coouponOBJ);
+            // console.log(couponDATA);
+            $('#couponBOX').append(couponPic);
+            // if (localStorage.getItem('hasCOUPON') === 'yes') {
+            //     $('#couponBOX').html(localStorage.getItem('coupon'));
+            // } else {
+            //     $('#couponBOX').append(couponPic);
+            // }
+        }
+
+        //優惠券狀態-登入後
+        for (let i = 0; i < $('.coupon_item').length; i++) {
+           const ccc = $('.coupon_item').eq(i);
+           // alert(ccc.data('status'));
+
+           if (ccc.data('status') === '02' || ccc.data('status') === '03') {
+               $('.coupon_item').eq(i).find('button').addClass('hasGET');
+           }
+           if (ccc.data('qty') == 0) {
+               $('.coupon_item').eq(i).find('button').addClass('hasFULL');
+           }
+        }
+    }
+    else {
+        //查無電子優惠券資料
+        // alert(data.Status.info);
+        $('.spEvent').hide();
+    }
+    
+</script>
+
+</html>

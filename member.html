@@ -15,247 +15,30 @@
     <link href="./Source/css/zh-cht/vendor/magnific-popup.css?20201012" rel="stylesheet" />
     <link href="./Source/css/zh-cht/main.css?20201012" rel="stylesheet" />
     <script src="./Source/js/zh-cht/vendor/jquery-3.3.1.min.js?20190506"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 </head>
 
 <body class="flex_bg">
-    <header>
-        <div class="wrap">
-            <a title="" href="default.html" class="logo">
-                <img src="Source/images/zh-cht/icons/logo.png" alt="" title="" class="img-fluid">
-                <p></p>
-            </a>
-            <div class="navItems">
-                <ul class="navMedia">
-                    <li>
-                        <a title="" href="https://www.facebook.com/PolyLuluTW/"><i class="icon"><u class="icon-i_media_fb"></u></i></a>
-                    </li>
-                    <li>
-                        <a title="" href="https://www.instagram.com/polylulu_tw/"><i class="icon"><u class="icon-i_media_ig"></u></i></a>
-                    </li>
-                    <li>
-                        <a title="" href="https://line.me/R/ti/p/%40aal2550w"><i class="icon"><u class="icon-i_media_line"></u></i></a>
-                    </li>
-                    <li>
-                        <a title="" href="store.html"><i class="icon"><u class="icon-i_media_shop"></u></i></a>
-                    </li>
-                    <li>
-                        <a title="" href=""><i class="icon"><u class="icon-i_media_app"></u></i></a>
-                    </li>
-                </ul>
-                <nav class="navMain">
-                    <div class="navMenuList"><u class="icon-i_menu"></u></div>
-                    <div class="navMain_bg">
-                        <div class="navMain_scroll">
-                            <ul>
-                                <li>
-                                    <a title="" href="productlist.html"><span>NEW-IN</span><b>最新商品</b></a>
-                                </li>
-                                <li class="navDott">．</li>
-                                <li class="polyStyle">
-                                    <a title="" href="style.html"><span>POLY-STYLE</span><b>風格企劃</b></a>
-                                    <div class="menu_in">
-                                        <div class="wrap">
-                                            <ul>
-                                                <li>
-                                                    <div class="menu_tit">風格企劃</div>
-                                                </li>
-                                                <li><a title="" href="style.html" target="_self">BARBAPAPA泡泡先生</a></li>
-                                                <li><a title="" href="style.html" target="_self">冬季大勢LOOK</a></li>
-                                                <li><a title="" href="style.html" target="_self">丹寧派對</a></li>
-                                                <li><a title="" href="style.html" target="_self">暖心外套特輯</a></li>
-                                                <li><a title="" href="style.html" target="_self">男孩風格紋穿搭</a></li>
-                                                <li><a title="" href="style.html" target="_self">職場穿搭手冊</a></li>
-                                                <li><a title="" href="style.html" target="_self">居家好感生活</a></li>
-                                                <li><a title="" href="style.html" target="_self">下身顯瘦系列</a></li>
-                                                <li><a title="" href="style.html" target="_self">浪漫婚禮</a></li>
-                                            </ul>
-                                            <a title="" href="style.html" class="menu_pic"><img src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/Banner/07.jpg" title="" alt=""></a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="navDott">．</li>
-                                <li class="polyStyle pdAll">
-                                    <a title="" href="productlist.html"><span>ALL</span><b>全館商品</b></a>
-                                    <div class="menu_in">
-                                        <div class="wrap">
-                                            <ul>
-                                                <li>
-                                                    <div class="menu_tit">上衣TOP</div>
-                                                </li>
-                                                <li><a href="PDList2.asp?cid=111100&ob=D3" target="_self">上衣全系列</a></li>
-                                                <li><a href="PDList2.asp?cid=111102&ob=D3" target="_self">雪紡</a></li>
-                                                <li><a href="PDList2.asp?cid=111104&ob=D3" target="_self">襯衫</a></li>
-                                                <li><a href="PDList2.asp?cid=111101&ob=D3" target="_self">T恤</a></li>
-                                                <li><a href="PDList2.asp?cid=111110&ob=D3" target="_self">針織/毛衣</a></li>
-                                                <li><a href="PDList2.asp?cid=111103&ob=D3" target="_self">背心/小可愛</a></li>
-                                            </ul>
-                                            <ul>
-                                                <li>
-                                                    <div class="menu_tit">洋裝DRESS</div>
-                                                </li>
-                                                <li><a href="PDList2.asp?cid=112200&ob=D3" target="_self">洋裝全系列</a></li>
-                                                <li><a href="PDList2.asp?cid=112207&ob=D3" target="_self">牛仔洋裝</a></li>
-                                                <li><a href="PDList2.asp?cid=112227&ob=D3" target="_self">短袖洋裝</a></li>
-                                                <li><a href="PDList2.asp?cid=112231&ob=D3" target="_self">長洋裝</a></li>
-                                            </ul>
-                                            <ul>
-                                                <li>
-                                                    <div class="menu_tit">褲子BOTTOMS</div>
-                                                </li>
-                                                <li><a href="PDList2.asp?cid=226600&ob=D3" target="_self">褲子全系列</a></li>
-                                                <li><a href="PDList2.asp?cid=226622&ob=D3" target="_self">短褲</a></li>
-                                                <li><a href="PDList2.asp?cid=226623&ob=D3" target="_self">長褲</a></li>
-                                                <li><a href="PDList2.asp?cid=226632&ob=D3" target="_self">牛仔褲</a></li>
-                                                <li><a href="PDList2.asp?cid=226624&ob=D3" target="_self">安全褲/內搭褲</a></li>
-                                                <li><a href="PDList2.asp?cid=226628&ob=D3" target="_self">連身褲</a></li>
-                                            </ul>
-
-                                            <ul>
-                                                <li>
-                                                    <div class="menu_tit">裙子SKIRTS</div>
-                                                </li>
-                                                <li><a href="PDList2.asp?cid=225500&ob=D3" target="_self">裙子全系列</a></li>
-                                                <li><a href="PDList2.asp?cid=225525&ob=D3" target="_self">短裙</a></li>
-                                                <li><a href="PDList2.asp?cid=225526&ob=D3" target="_self">長裙</a></li>
-                                                <li><a href="PDList2.asp?cid=225507&ob=D3" target="_self">牛仔裙</a></li>
-                                                <li><a href="PDList2.asp?cid=339900&ob=D3" target="_self">配件</a></li>
-                                            </ul>
-                                            <ul>
-                                                <li>
-                                                    <div class="menu_tit">外套OUTER</div>
-                                                </li>
-                                                <li><a href="PDList2.asp?cid=113300&ob=D3" target="_self">外套全系列</a></li>
-                                            </ul>
-                                            <a title="" href="style.html" class="menu_pic"><img src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/Banner/07.jpg" title="" alt=""></a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="navDott">．</li>
-                                <li>
-                                    <a title="" href="productlist.html"><span>BEST</span><b>暢銷排行</b></a>
-                                </li>
-                                <li class="navDott">．</li>
-                                <li>
-                                    <a title="" href="productlist.html"><span>RESTOCK</span><b>熱銷補貨</b></a>
-                                </li>
-                                <li class="navDott">．</li>
-                                <li>
-                                    <a title="" href="productsale.html"><span>SALE</span><b>最新優惠</b></b></a>
-                                </li>
-                                <li class="navDott">．</li>
-                                <li>
-                                    <a title="" href="https://polylulu.org/"><i class="hothot">NEW</i><span>POLY BLOG</span><b>波妞部落格</b></a>
-                                </li>
-                                <li class="navDott">．</li>
-                                <li>
-                                    <a title="" href="store.html"><span>STORE-INFO</span><b>門市資訊</b></a>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </nav>
-                <nav class="navMain_m slideLeft">
-                    <div class="nav_top">
-                        <span>MENU </span>
-                        <span class="btnClose">
-                            <i class="icon"><u class="icon-i_xx"></u></i>
-                        </span>
-                    </div>
-                    <div class="nav_list">
-                        <div class="nav_list_scroll">
-                            <ul>
-                                <li>
-                                    <a title="" href="">新品上市</a>
-                                    <div class="menu_in">
-                                        <a title="" href="productlist.html">▸ 本週新品</a>
-                                        <a title="" href="productlist.html">▸ 0429上市新品</a>
-                                        <a title="" href="productlist.html">▸ 0422上市新品</a>
-                                        <a title="" href="productlist.html">▸ 0415上市新品</a>
-                                        <a title="" href="productlist.html">▸ 全館商品</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a title="" href="productsale.html" style="color:#EC4C74;">SALE</a>
-                                    <div class="menu_in">
-                                        <a title="" href="productsale.html">▸ SALE夏季特賣【3件49折】</a>
-                                        <a title="" href="productsale.html">▸ SALE夏季特賣【2件69折】</a>
-                                        <a title="" href="productsale.html">▸ 零碼任選4折</a>
-                                        <a title="" href="productsale.html">▸ 新品限時甜甜價</a>
-                                        <a title="" href="productsale.html">▸ 新品上市88折 滿1200免運</a>
-                                        <a title="" href="productsale.html">▸ 蜜大腿涼感雕塑褲-任2件$450/件</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a title="" href="">風格企劃</a>
-                                    <div class="menu_in">
-                                        <a title="" href="style.html">▸ 早秋法式輕質感</a>
-                                        <a title="" href="style.html">▸ 暑假休閒穿搭</a>
-                                        <a title="" href="style.html">▸ LIGHT 涼感系列</a>
-                                        <a title="" href="style.html">▸ Mua! 日常微性感</a>
-                                        <a title="" href="style.html">▸ POLY DENIM 牛仔系列</a>
-                                        <a title="" href="style.html">▸ BARBAPAPA泡泡先生</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a title="" href="">上衣TOP</a>
-                                    <div class="menu_in">
-                                        <a href="PDList2.asp?cid=111100&ob=D3" target="_self">▸ 上衣全系列</a>
-                                        <a href="PDList2.asp?cid=111102&ob=D3" target="_self">▸ 雪紡</a>
-                                        <a href="PDList2.asp?cid=111104&ob=D3" target="_self">▸ 襯衫</a>
-                                        <a href="PDList2.asp?cid=111101&ob=D3" target="_self">▸ T恤</a>
-                                        <a href="PDList2.asp?cid=111110&ob=D3" target="_self">▸ 針織/毛衣</a>
-                                        <a href="PDList2.asp?cid=111103&ob=D3" target="_self">▸ 背心/小可愛</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a title="" href="">洋裝DRESS</a>
-                                    <div class="menu_in">
-                                        <a href="PDList2.asp?cid=112200&ob=D3" target="_self">▸ 洋裝全系列</a>
-                                        <a href="PDList2.asp?cid=112207&ob=D3" target="_self">▸ 牛仔洋裝</a>
-                                        <a href="PDList2.asp?cid=112227&ob=D3" target="_self">▸ 短袖洋裝</a>
-                                        <a href="PDList2.asp?cid=112231&ob=D3" target="_self">▸ 長洋裝</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a title="" href="">褲子BOTTOMS</a>
-                                    <div class="menu_in">
-                                        <a href="PDList2.asp?cid=226600&ob=D3" target="_self">▸ 褲子全系列</a>
-                                        <a href="PDList2.asp?cid=226622&ob=D3" target="_self">▸ 短褲</a>
-                                        <a href="PDList2.asp?cid=226623&ob=D3" target="_self">▸ 長褲</a>
-                                        <a href="PDList2.asp?cid=226632&ob=D3" target="_self">▸ 牛仔褲</a>
-                                        <a href="PDList2.asp?cid=226624&ob=D3" target="_self">▸ 安全褲/內搭褲</a>
-                                        <a href="PDList2.asp?cid=226628&ob=D3" target="_self">▸ 連身褲</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a title="" href="">裙子SKIRTS</a>
-                                    <div class="menu_in">
-                                        <a href="PDList2.asp?cid=225500&ob=D3" target="_self">▸ 裙子全系列</a>
-                                        <a href="PDList2.asp?cid=225525&ob=D3" target="_self">▸ 短裙</a>
-                                        <a href="PDList2.asp?cid=225526&ob=D3" target="_self">▸ 長裙</a>
-                                        <a href="PDList2.asp?cid=225507&ob=D3" target="_self">▸ 牛仔裙</a>
-                                        <a href="PDList2.asp?cid=339900&ob=D3" target="_self">▸ 配件</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a title="" href="">外套OUTER</a>
-                                    <div class="menu_in">
-                                        <a href="PDList2.asp?cid=113300&ob=D3" target="_self">▸ 外套全系列</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+    <form method="post" action="./orderlist" id="form1">
+        <header>
+            <div class="wrap">
+                <a title="" href="default.html" class="logo">
+                    <img src="Source/images/zh-cht/icons/logo.png" alt="" title="" class="img-fluid">
+                    <p></p>
+                </a>
+                <div class="navItems">
                     <ul class="navMedia">
                         <li>
-                            <a title="" href="https://www.facebook.com/PolyLuluTW/"><i class="icon"><u class="icon-i_media_fb"></u></i></a>
+                            <a title="" href="https://www.facebook.com/PolyLuluTW/"><i class="icon"><u
+                                        class="icon-i_media_fb"></u></i></a>
                         </li>
                         <li>
-                            <a title="" href="https://www.instagram.com/polylulu_tw/"><i class="icon"><u class="icon-i_media_ig"></u></i></a>
+                            <a title="" href="https://www.instagram.com/polylulu_tw/"><i class="icon"><u
+                                        class="icon-i_media_ig"></u></i></a>
                         </li>
                         <li>
-                            <a title="" href="https://line.me/R/ti/p/%40aal2550w"><i class="icon"><u class="icon-i_media_line"></u></i></a>
+                            <a title="" href="https://line.me/R/ti/p/%40aal2550w"><i class="icon"><u
+                                        class="icon-i_media_line"></u></i></a>
                         </li>
                         <li>
                             <a title="" href="store.html"><i class="icon"><u class="icon-i_media_shop"></u></i></a>
@@ -264,217 +47,512 @@
                             <a title="" href=""><i class="icon"><u class="icon-i_media_app"></u></i></a>
                         </li>
                     </ul>
-                </nav>
-                <ul class="navTool">
-                    <li class="nav_search">
-                        <a title="" href=""><i class="icon"><u class="icon-i_search"></u></i></a>
-                        <div class="search_bg" style="display: none;">
-                            <div class="search_bar">
-                                <input type="text" placeholder="Search">
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a title="" href="member.html"><i class="icon"><u class="icon-i_member"></u></i></a>
-                    </li>
-                    <li class="has_ball link_wish">
-                        <a title="" href="login.html"><i class="icon"><u class="icon-i_heart"></u></i></a>
-                        <p class="red_ball">5</p>
-                    </li>
-                    <li class="has_ball link_cart">
-                        <a title="" href="shoppingcart.html"><i class="icon"><u class="icon-i_cart"></u></i></a>
-                        <p class="red_ball">5</p>
-                        <div class="menu_in">
-                            <div class="wrap">
-                                <div class="menuCart_title">
-                                    <h3>YOUR CART</h3>
-                                </div>
-                                <div class="car-items cartDown">
-                                    <ul>
-                                        <li class="item_pic">
-                                            <a title="" href="product.html"><img src="https://photo.polylulu.com.tw/Photo/PDImg/93010036/93010036_A06.jpg" alt="" title="">
-                                            </a>
-                                        </li>
-                                        <li class="item_info text-left">
-                                            <span class="item_info_name"> <a title="" href="product.html">素面下擺圓弧後壓摺長袖針織衫</a></span>
-                                            <span class="item_info_sale">還差2件即享85折優惠，<a title="" href="default.html" class="link_underline">挑選更多+</a></span>
-                                            <span class="item_info_other">Color : 白 / Size: L / Item: 99</span>
-                                            <span class="price">NTD.548</span></li>
-                                    </ul>
-                                    <ul>
-                                        <li class="item_pic">
-                                            <a title="" href="product.html"><img src="https://photo.polylulu.com.tw/Photo/PDImg/93010036/93010036_A06.jpg" alt="" title="">
-                                            </a>
-                                        </li>
-                                        <li class="item_info text-left">
-                                            <span class="item_info_name"> <a title="" href="product.html">素面下擺圓弧後壓摺長袖針織衫</a></span>
-                                            <span class="item_info_sale">還差2件即享85折優惠，<a title="" href="default.html" class="link_underline">挑選更多+</a></span>
-                                            <span class="item_info_other">Color : 白 / Size: L / Item: 99</span>
-                                            <span class="price">NTD.548</span></li>
-                                    </ul>
+                    <nav class="navMain">
+                        <div class="navMenuList"><u class="icon-i_menu"></u></div>
+                        <div class="navMain_bg">
+                            <div class="navMain_scroll">
+                                <ul>
+                                    <li>
+                                        <a title="" href="productlist.html"><span>NEW-IN</span><b>最新商品</b></a>
+                                    </li>
+                                    <li class="navDott">．</li>
+                                    <li class="polyStyle">
+                                        <a title="" href="style.html"><span>POLY-STYLE</span><b>風格企劃</b></a>
+                                        <div class="menu_in">
+                                            <div class="wrap">
+                                                <ul>
+                                                    <li>
+                                                        <div class="menu_tit">風格企劃</div>
+                                                    </li>
+                                                    <li><a title="" href="style.html" target="_self">BARBAPAPA泡泡先生</a>
+                                                    </li>
+                                                    <li><a title="" href="style.html" target="_self">冬季大勢LOOK</a></li>
+                                                    <li><a title="" href="style.html" target="_self">丹寧派對</a></li>
+                                                    <li><a title="" href="style.html" target="_self">暖心外套特輯</a></li>
+                                                    <li><a title="" href="style.html" target="_self">男孩風格紋穿搭</a></li>
+                                                    <li><a title="" href="style.html" target="_self">職場穿搭手冊</a></li>
+                                                    <li><a title="" href="style.html" target="_self">居家好感生活</a></li>
+                                                    <li><a title="" href="style.html" target="_self">下身顯瘦系列</a></li>
+                                                    <li><a title="" href="style.html" target="_self">浪漫婚禮</a></li>
+                                                </ul>
+                                                <a title="" href="style.html" class="menu_pic"><img
+                                                        src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/Banner/07.jpg"
+                                                        title="" alt=""></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="navDott">．</li>
+                                    <li class="polyStyle pdAll">
+                                        <a title="" href="productlist.html"><span>ALL</span><b>全館商品</b></a>
+                                        <div class="menu_in">
+                                            <div class="wrap">
+                                                <ul>
+                                                    <li>
+                                                        <div class="menu_tit">上衣TOP</div>
+                                                    </li>
+                                                    <li><a href="PDList2.asp?cid=111100&ob=D3" target="_self">上衣全系列</a>
+                                                    </li>
+                                                    <li><a href="PDList2.asp?cid=111102&ob=D3" target="_self">雪紡</a>
+                                                    </li>
+                                                    <li><a href="PDList2.asp?cid=111104&ob=D3" target="_self">襯衫</a>
+                                                    </li>
+                                                    <li><a href="PDList2.asp?cid=111101&ob=D3" target="_self">T恤</a>
+                                                    </li>
+                                                    <li><a href="PDList2.asp?cid=111110&ob=D3" target="_self">針織/毛衣</a>
+                                                    </li>
+                                                    <li><a href="PDList2.asp?cid=111103&ob=D3" target="_self">背心/小可愛</a>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li>
+                                                        <div class="menu_tit">洋裝DRESS</div>
+                                                    </li>
+                                                    <li><a href="PDList2.asp?cid=112200&ob=D3" target="_self">洋裝全系列</a>
+                                                    </li>
+                                                    <li><a href="PDList2.asp?cid=112207&ob=D3" target="_self">牛仔洋裝</a>
+                                                    </li>
+                                                    <li><a href="PDList2.asp?cid=112227&ob=D3" target="_self">短袖洋裝</a>
+                                                    </li>
+                                                    <li><a href="PDList2.asp?cid=112231&ob=D3" target="_self">長洋裝</a>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li>
+                                                        <div class="menu_tit">褲子BOTTOMS</div>
+                                                    </li>
+                                                    <li><a href="PDList2.asp?cid=226600&ob=D3" target="_self">褲子全系列</a>
+                                                    </li>
+                                                    <li><a href="PDList2.asp?cid=226622&ob=D3" target="_self">短褲</a>
+                                                    </li>
+                                                    <li><a href="PDList2.asp?cid=226623&ob=D3" target="_self">長褲</a>
+                                                    </li>
+                                                    <li><a href="PDList2.asp?cid=226632&ob=D3" target="_self">牛仔褲</a>
+                                                    </li>
+                                                    <li><a href="PDList2.asp?cid=226624&ob=D3"
+                                                            target="_self">安全褲/內搭褲</a></li>
+                                                    <li><a href="PDList2.asp?cid=226628&ob=D3" target="_self">連身褲</a>
+                                                    </li>
+                                                </ul>
 
-                                </div>
-                                <div class="menuCart_total">
-                                    <span>共 <b>99</b> 件 </span>
-                                    <span>小計 : NTD.  <b>1,208</b> </span>
-                                </div>
-                                <div class="menuCart_btn">
-                                    <a title="shoppingcart.html" href="shoppingcart.html" class="btn btn-primary">查看購物車</a>
-                                </div>
+                                                <ul>
+                                                    <li>
+                                                        <div class="menu_tit">裙子SKIRTS</div>
+                                                    </li>
+                                                    <li><a href="PDList2.asp?cid=225500&ob=D3" target="_self">裙子全系列</a>
+                                                    </li>
+                                                    <li><a href="PDList2.asp?cid=225525&ob=D3" target="_self">短裙</a>
+                                                    </li>
+                                                    <li><a href="PDList2.asp?cid=225526&ob=D3" target="_self">長裙</a>
+                                                    </li>
+                                                    <li><a href="PDList2.asp?cid=225507&ob=D3" target="_self">牛仔裙</a>
+                                                    </li>
+                                                    <li><a href="PDList2.asp?cid=339900&ob=D3" target="_self">配件</a>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li>
+                                                        <div class="menu_tit">外套OUTER</div>
+                                                    </li>
+                                                    <li><a href="PDList2.asp?cid=113300&ob=D3" target="_self">外套全系列</a>
+                                                    </li>
+                                                </ul>
+                                                <a title="" href="style.html" class="menu_pic"><img
+                                                        src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/Banner/07.jpg"
+                                                        title="" alt=""></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="navDott">．</li>
+                                    <li>
+                                        <a title="" href="productlist.html"><span>BEST</span><b>暢銷排行</b></a>
+                                    </li>
+                                    <li class="navDott">．</li>
+                                    <li>
+                                        <a title="" href="productlist.html"><span>RESTOCK</span><b>熱銷補貨</b></a>
+                                    </li>
+                                    <li class="navDott">．</li>
+                                    <li>
+                                        <a title="" href="productsale.html"><span>SALE</span><b>最新優惠</b></b></a>
+                                    </li>
+                                    <li class="navDott">．</li>
+                                    <li>
+                                        <a title="" href="https://polylulu.org/"><i class="hothot">NEW</i><span>POLY
+                                                BLOG</span><b>波妞部落格</b></a>
+                                    </li>
+                                    <li class="navDott">．</li>
+                                    <li>
+                                        <a title="" href="store.html"><span>STORE-INFO</span><b>門市資訊</b></a>
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
 
-        </div>
-    </header>
-    <!-- Main Content op -->
-    <div id="mainArea" class="pageIn pageMember">
-        <div id="main-content" class="main">
-            <div class="sidebar navLeft navMember">
-                <div class="nav_m"><span>會員中心</span><u class="icon-i_down"></u></div>
-                <ul>
-                    <li>
-                        <a href="member.html" title="">會員中心</a>
-                    </li>
-                    <li>
-                        <a href="orderlist.html" title="">訂單 / 退貨查詢</a>
-                    </li>
-                    <li>
-                        <a href="wishlist.html" title="">願望清單</a>
-                    </li>
-                    <li>
-                        <a href="modify.html" title="">會員資料維護</a>
-                    </li>
-                    <li>
-                        <a href="default.html" title="">登出</a>
-                    </li>
-                </ul>
-            </div>
-            <div id="content" class="content areaRight conMember">
-                <h1 class="mdTitle">MY ACCOUNT
-                    <span>會員中心</span>
-                </h1>
-                <p class="text-center txt_welcome">您好，感謝您再次光臨POLYLULU！祝您購物愉快</p>
-                <div class="infoArea">
-                    <div class="warp">
-                        <div class="infoTitle">
-                            <div class="txt_level"><span><u class="icon-i_member mr-1"></u>會員等級 :</span> <b class="h5">一般會員</b></div>
-                            <div class="txt_welcome">您好，感謝您再次光臨POLYLULU！祝您購物愉快</div>
                         </div>
-                        <div class="row infoLevel_box">
-                            <div class="col-lg-4 text-center vip_im">
-                                <div>消費累計金額</div>
-                                <div class="vip_money">$ <span class="h1">0</span></div>
-                                <div class="info_txt">再 <span class="remind">$6000</span>即可升級為VIP會員喔!!</div>
-                                <a href="memberdiscount.html" class="btn btn-outline-primary d-block">看看VIP獨享優惠<u class="icon-i_search ml-1"></u></a>
+                    </nav>
+                    <nav class="navMain_m slideLeft">
+                        <div class="nav_top">
+                            <span>MENU </span>
+                            <span class="btnClose">
+                                <i class="icon"><u class="icon-i_xx"></u></i>
+                            </span>
+                        </div>
+                        <div class="nav_list">
+                            <div class="nav_list_scroll">
+                                <ul>
+                                    <li>
+                                        <a title="" href="">新品上市</a>
+                                        <div class="menu_in">
+                                            <a title="" href="productlist.html">▸ 本週新品</a>
+                                            <a title="" href="productlist.html">▸ 0429上市新品</a>
+                                            <a title="" href="productlist.html">▸ 0422上市新品</a>
+                                            <a title="" href="productlist.html">▸ 0415上市新品</a>
+                                            <a title="" href="productlist.html">▸ 全館商品</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a title="" href="productsale.html" style="color:#EC4C74;">SALE</a>
+                                        <div class="menu_in">
+                                            <a title="" href="productsale.html">▸ SALE夏季特賣【3件49折】</a>
+                                            <a title="" href="productsale.html">▸ SALE夏季特賣【2件69折】</a>
+                                            <a title="" href="productsale.html">▸ 零碼任選4折</a>
+                                            <a title="" href="productsale.html">▸ 新品限時甜甜價</a>
+                                            <a title="" href="productsale.html">▸ 新品上市88折 滿1200免運</a>
+                                            <a title="" href="productsale.html">▸ 蜜大腿涼感雕塑褲-任2件$450/件</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a title="" href="">風格企劃</a>
+                                        <div class="menu_in">
+                                            <a title="" href="style.html">▸ 早秋法式輕質感</a>
+                                            <a title="" href="style.html">▸ 暑假休閒穿搭</a>
+                                            <a title="" href="style.html">▸ LIGHT 涼感系列</a>
+                                            <a title="" href="style.html">▸ Mua! 日常微性感</a>
+                                            <a title="" href="style.html">▸ POLY DENIM 牛仔系列</a>
+                                            <a title="" href="style.html">▸ BARBAPAPA泡泡先生</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a title="" href="">上衣TOP</a>
+                                        <div class="menu_in">
+                                            <a href="PDList2.asp?cid=111100&ob=D3" target="_self">▸ 上衣全系列</a>
+                                            <a href="PDList2.asp?cid=111102&ob=D3" target="_self">▸ 雪紡</a>
+                                            <a href="PDList2.asp?cid=111104&ob=D3" target="_self">▸ 襯衫</a>
+                                            <a href="PDList2.asp?cid=111101&ob=D3" target="_self">▸ T恤</a>
+                                            <a href="PDList2.asp?cid=111110&ob=D3" target="_self">▸ 針織/毛衣</a>
+                                            <a href="PDList2.asp?cid=111103&ob=D3" target="_self">▸ 背心/小可愛</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a title="" href="">洋裝DRESS</a>
+                                        <div class="menu_in">
+                                            <a href="PDList2.asp?cid=112200&ob=D3" target="_self">▸ 洋裝全系列</a>
+                                            <a href="PDList2.asp?cid=112207&ob=D3" target="_self">▸ 牛仔洋裝</a>
+                                            <a href="PDList2.asp?cid=112227&ob=D3" target="_self">▸ 短袖洋裝</a>
+                                            <a href="PDList2.asp?cid=112231&ob=D3" target="_self">▸ 長洋裝</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a title="" href="">褲子BOTTOMS</a>
+                                        <div class="menu_in">
+                                            <a href="PDList2.asp?cid=226600&ob=D3" target="_self">▸ 褲子全系列</a>
+                                            <a href="PDList2.asp?cid=226622&ob=D3" target="_self">▸ 短褲</a>
+                                            <a href="PDList2.asp?cid=226623&ob=D3" target="_self">▸ 長褲</a>
+                                            <a href="PDList2.asp?cid=226632&ob=D3" target="_self">▸ 牛仔褲</a>
+                                            <a href="PDList2.asp?cid=226624&ob=D3" target="_self">▸ 安全褲/內搭褲</a>
+                                            <a href="PDList2.asp?cid=226628&ob=D3" target="_self">▸ 連身褲</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a title="" href="">裙子SKIRTS</a>
+                                        <div class="menu_in">
+                                            <a href="PDList2.asp?cid=225500&ob=D3" target="_self">▸ 裙子全系列</a>
+                                            <a href="PDList2.asp?cid=225525&ob=D3" target="_self">▸ 短裙</a>
+                                            <a href="PDList2.asp?cid=225526&ob=D3" target="_self">▸ 長裙</a>
+                                            <a href="PDList2.asp?cid=225507&ob=D3" target="_self">▸ 牛仔裙</a>
+                                            <a href="PDList2.asp?cid=339900&ob=D3" target="_self">▸ 配件</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a title="" href="">外套OUTER</a>
+                                        <div class="menu_in">
+                                            <a href="PDList2.asp?cid=113300&ob=D3" target="_self">▸ 外套全系列</a>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="col-lg-4 text-center vip_im">
-                                <div>可用購物金</div>
-                                <div class="vip_money">$ <span class="h1">0</span></div>
-                                <div class="info_txt"><a href="aboutbonus.html" title="">如何獲得購物金</a><u class="icon-i_forget"></u></div>
-                                <a href="membercash.html" class="btn btn-outline-primary d-block">查詢明細 <u class="icon-i_search ml-1"></u></a>
+                        </div>
+                        <ul class="navMedia">
+                            <li>
+                                <a title="" href="https://www.facebook.com/PolyLuluTW/"><i class="icon"><u
+                                            class="icon-i_media_fb"></u></i></a>
+                            </li>
+                            <li>
+                                <a title="" href="https://www.instagram.com/polylulu_tw/"><i class="icon"><u
+                                            class="icon-i_media_ig"></u></i></a>
+                            </li>
+                            <li>
+                                <a title="" href="https://line.me/R/ti/p/%40aal2550w"><i class="icon"><u
+                                            class="icon-i_media_line"></u></i></a>
+                            </li>
+                            <li>
+                                <a title="" href="store.html"><i class="icon"><u class="icon-i_media_shop"></u></i></a>
+                            </li>
+                            <li>
+                                <a title="" href=""><i class="icon"><u class="icon-i_media_app"></u></i></a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <ul class="navTool">
+                        <li class="nav_search">
+                            <a title="" href=""><i class="icon"><u class="icon-i_search"></u></i></a>
+                            <div class="search_bg" style="display: none;">
+                                <div class="search_bar">
+                                    <input type="text" placeholder="Search">
+                                </div>
                             </div>
-                            <div class="col-lg-4 text-center vip_im">
-                                <div>可用紅利金</div>
-                                <div class="vip_money">$ <span class="h1">0</span></div>
-                                <div class="info_txt"><a href="aboutbonus.html" title="">如何獲得紅利金</a><u class="icon-i_forget"></u></div>
-                                <a href="memberbonus.html" class="btn btn-outline-primary d-block">查詢明細 <u class="icon-i_search ml-1"></u></a>
+                        </li>
+                        <li>
+                            <a title="" href="member.html"><i class="icon"><u class="icon-i_member"></u></i></a>
+                        </li>
+                        <li class="has_ball link_wish">
+                            <a title="" href="login.html"><i class="icon"><u class="icon-i_heart"></u></i></a>
+                            <p class="red_ball">5</p>
+                        </li>
+                        <li class="has_ball link_cart">
+                            <a title="" href="shoppingcart.html"><i class="icon"><u class="icon-i_cart"></u></i></a>
+                            <p class="red_ball">5</p>
+                            <div class="menu_in">
+                                <div class="wrap">
+                                    <div class="menuCart_title">
+                                        <h3>YOUR CART</h3>
+                                    </div>
+                                    <div class="car-items cartDown">
+                                        <ul>
+                                            <li class="item_pic">
+                                                <a title="" href="product.html"><img
+                                                        src="https://photo.polylulu.com.tw/Photo/PDImg/93010036/93010036_A06.jpg"
+                                                        alt="" title="">
+                                                </a>
+                                            </li>
+                                            <li class="item_info text-left">
+                                                <span class="item_info_name"> <a title=""
+                                                        href="product.html">素面下擺圓弧後壓摺長袖針織衫</a></span>
+                                                <span class="item_info_sale">還差2件即享85折優惠，<a title="" href="default.html"
+                                                        class="link_underline">挑選更多+</a></span>
+                                                <span class="item_info_other">Color : 白 / Size: L / Item: 99</span>
+                                                <span class="price">NTD.548</span>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="item_pic">
+                                                <a title="" href="product.html"><img
+                                                        src="https://photo.polylulu.com.tw/Photo/PDImg/93010036/93010036_A06.jpg"
+                                                        alt="" title="">
+                                                </a>
+                                            </li>
+                                            <li class="item_info text-left">
+                                                <span class="item_info_name"> <a title=""
+                                                        href="product.html">素面下擺圓弧後壓摺長袖針織衫</a></span>
+                                                <span class="item_info_sale">還差2件即享85折優惠，<a title="" href="default.html"
+                                                        class="link_underline">挑選更多+</a></span>
+                                                <span class="item_info_other">Color : 白 / Size: L / Item: 99</span>
+                                                <span class="price">NTD.548</span>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                    <div class="menuCart_total">
+                                        <span>共 <b>99</b> 件 </span>
+                                        <span>小計 : NTD. <b>1,208</b> </span>
+                                    </div>
+                                    <div class="menuCart_btn">
+                                        <a title="shoppingcart.html" href="shoppingcart.html"
+                                            class="btn btn-primary">查看購物車</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <a href="https://www.polylulu.com.tw/" class="sp_event_BN"></a>
+        </header>
+        <!-- Main Content op -->
+        <div id="mainArea" class="pageIn pageMember">
+            <div id="main-content" class="main">
+                <div class="sidebar navLeft navMember">
+                    <div class="nav_m"><span>會員中心</span><u class="icon-i_down"></u></div>
+                    <ul>
+                        <li>
+                            <a href="member.html" title="">會員中心</a>
+                        </li>
+                        <li>
+                            <a href="orderlist.html" title="">訂單 / 退貨查詢</a>
+                        </li>
+                        <li>
+                            <a href="wishlist.html" title="">願望清單</a>
+                        </li>
+                        <li>
+                            <a href="modify.html" title="">會員資料維護</a>
+                        </li>
+                        <li>
+                            <a href="default.html" title="">登出</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="content" class="content areaRight conMember">
+                    <h1 class="mdTitle">MY ACCOUNT
+                        <span>會員中心</span>
+                    </h1>
+                    <p class="text-center txt_welcome">您好，感謝您再次光臨POLYLULU！祝您購物愉快</p>
+                    <div class="infoArea">
+                        <div class="warp">
+                            <div class="infoTitle">
+                                <div class="txt_level"><span><u class="icon-i_member mr-1"></u>會員等級 :</span> <b
+                                        class="h5">一般會員</b></div>
+                                <div class="txt_welcome">您好，感謝您再次光臨POLYLULU！祝您購物愉快</div>
+                            </div>
+                            <div class="row justify-content-between infoLevel_box">
+                                <div class="text-center vip_im vip_total">
+                                    <div id="chartBOX">
+                                        <div id="chartWrapper">
+                                            <canvas id="myChart" width="250" height="250"></canvas>
+                                        </div>
+                                        <div class="chartTitle">
+                                            <div>消費累計金額</div>
+                                            <div class="vip_money">$ <span class="h1" id="shopMMM"></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="info_txt">再 <span class="remind" id="vip_more"></span> 即可升級為VIP會員喔!!</div>
+                                    <a href="memberdiscount.html" class="btn btn-outline-primary">看看VIP獨享優惠<u
+                                            class="icon-i_search ml-1"></u></a>
+                                </div>
+                                <div class="text-center vip_im">
+                                    <div>可用購物金</div>
+                                    <div class="vip_money">$ <span class="h1">9999</span></div>
+                                    <div class="info_txt"><a href="aboutbonus.html" title="">如何獲得購物金</a><u
+                                            class="icon-i_forget"></u></div>
+                                    <a href="membercash.html" class="btn btn-outline-primary">查詢明細 <u
+                                            class="icon-i_search ml-1"></u></a>
+                                </div>
+                                <div class="text-center vip_im">
+                                    <div>可用紅利金</div>
+                                    <div class="vip_money">$ <span class="h1">9999</span></div>
+                                    <div class="info_txt"><a href="aboutbonus.html" title="">如何獲得紅利金</a><u
+                                            class="icon-i_forget"></u></div>
+                                    <a href="memberbonus.html" class="btn btn-outline-primary">查詢明細 <u
+                                            class="icon-i_search ml-1"></u></a>
+                                </div>
+                                <div class="text-center vip_im">
+                                    <div>可用優惠券</div>
+                                    <div class="vip_money"> <span class="h1">5</span> 張</div>
+                                    <div class="info_txt"><a href="aboutbonus.html" title="">如何獲得優惠券</a><u
+                                            class="icon-i_forget"></u></div>
+                                    <a href="membercoupon_new.html" class="btn btn-outline-primary">查詢明細 <u
+                                            class="icon-i_search ml-1"></u></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Main Content op -->
-    <footer>
-        <div class="wrap">
-            <div class="areaLinks">
-                <ul class="menuLv1">
-                    <li><a title="" href="" class="menuLv1_link"><span>ABOUT US</span><b>關於我們</b><i class="icon_open"> + </i></a>
-                        <ul class="menuLv2">
-                            <li> <a title="" href="about.html">品牌優勢</a></li>
-                            <li> <a title="" href="privacy.html">隱私權保護</a></li>
-                            <li> <a title="" href="newslist.html">最新消息</a></li>
-                            <li> <a title="" href="fraud_prevention.html">防詐四步驟</a></li>
-                            <li> <a href="cooperation.html">廠商合作</a></li>
-                            <li> <a title="" href="store.html">門市資訊</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="menuLv1">
-                    <li><a title="" href="" class="menuLv1_link"><span>HOW TO ORDER</span><b>如何訂購</b><i class="icon_open"> + </i></a>
-                        <ul class="menuLv2">
-                            <li><a title="" href="faq.html">常見問題</a></li>
-                            <li><a title="" href="service.html">客服信箱</a></li>
-                            <li><a title="" href="how2order.html">訂購流程</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="menuLv1">
-                    <li><a title="" href="" class="menuLv1_link"><span>MEMBER ONLY</span><b>會員專屬</b><i class="icon_open"> + </i></a>
-                        <ul class="menuLv2">
-                            <li>
-                                <a title="" href="login.html">加入會員</a>
-                            </li>
-                            <li>
-                                <a title="" href="orderlist.html">訂單查詢</a>
-                            </li>
-                            <li>
-                                <a title="" href="terms.html">會員條款</a>
-                            </li>
-                            <li>
-                                <a title="" href="memberdiscount.html">會員優惠<u class="icon_shiny">UP!</u></a>
-                            </li>
-                            <li>
-                                <a title="" href="aboutbonus.html">購物金&紅利金</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="areaMedia">
-                <ul class="navMedia">
-                    <li>
-                        <a title="" href="https://www.facebook.com/PolyLuluTW/" target="_blank"><i class="icon"><u class="icon-i_media_fb"></u></i></a>
-                    </li>
-                    <li>
-                        <a title="" href="https://www.instagram.com/polylulu_tw/" target="_blank"><i class="icon"><u class="icon-i_media_ig"></u></i></a>
-                    </li>
-                    <li>
-                        <a title="" href="https://line.me/R/ti/p/%40aal2550w" target="_blank"><i class="icon"><u class="icon-i_media_line"></u></i></a>
-                    </li>
-                    <li>
-                        <a title="" href="store.html" target="_blank"><i class="icon"><u class="icon-i_media_shop"></u></i></a>
-                    </li>
-                    <li>
-                        <a title="" href="" target="_blank"><i class="icon"><u class="icon-i_media_app"></u></i></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="line_vertical"></div>
-            <div class="areaService">
-                <h1>CUSTOMER SERVICE</h1>
-                <div class="info">
-                    <a title="" href="service.html" class="link_underline"><i class="icon"><u class="icon-i_comment"></u></i>Contact us</a>
-                    <p>+886 2-2760-6658
-                        <br>週一至週五
-                        <br>09:30 - 12:30
-                        <br>13:30 - 18:30
-                    </p>
+        <!-- Main Content op -->
+        <footer>
+            <div class="wrap">
+                <div class="areaLinks">
+                    <ul class="menuLv1">
+                        <li><a title="" href="" class="menuLv1_link"><span>ABOUT US</span><b>關於我們</b><i
+                                    class="icon_open"> + </i></a>
+                            <ul class="menuLv2">
+                                <li> <a title="" href="about.html">品牌優勢</a></li>
+                                <li> <a title="" href="privacy.html">隱私權保護</a></li>
+                                <li> <a title="" href="newslist.html">最新消息</a></li>
+                                <li> <a title="" href="fraud_prevention.html">防詐四步驟</a></li>
+                                <li> <a href="cooperation.html">廠商合作</a></li>
+                                <li> <a title="" href="store.html">門市資訊</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="menuLv1">
+                        <li><a title="" href="" class="menuLv1_link"><span>HOW TO ORDER</span><b>如何訂購</b><i
+                                    class="icon_open"> + </i></a>
+                            <ul class="menuLv2">
+                                <li><a title="" href="faq.html">常見問題</a></li>
+                                <li><a title="" href="service.html">客服信箱</a></li>
+                                <li><a title="" href="how2order.html">訂購流程</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="menuLv1">
+                        <li><a title="" href="" class="menuLv1_link"><span>MEMBER ONLY</span><b>會員專屬</b><i
+                                    class="icon_open"> + </i></a>
+                            <ul class="menuLv2">
+                                <li>
+                                    <a title="" href="login.html">加入會員</a>
+                                </li>
+                                <li>
+                                    <a title="" href="orderlist.html">訂單查詢</a>
+                                </li>
+                                <li>
+                                    <a title="" href="terms.html">會員條款</a>
+                                </li>
+                                <li>
+                                    <a title="" href="memberdiscount.html">會員優惠<u class="icon_shiny">UP!</u></a>
+                                </li>
+                                <li>
+                                    <a title="" href="aboutbonus.html">購物金&紅利金</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-            <div class="areaSubscribe">
-                <h1>WEEKLY SUBSCRIBE</h1>
-                <div class="info"><input class="form-control" type="email" placeholder="EMAIL">
-                    <a title="" href="" class="btn btn-outline-primary">SEND</a>
+                <div class="areaMedia">
+                    <ul class="navMedia">
+                        <li>
+                            <a title="" href="https://www.facebook.com/PolyLuluTW/" target="_blank"><i class="icon"><u
+                                        class="icon-i_media_fb"></u></i></a>
+                        </li>
+                        <li>
+                            <a title="" href="https://www.instagram.com/polylulu_tw/" target="_blank"><i class="icon"><u
+                                        class="icon-i_media_ig"></u></i></a>
+                        </li>
+                        <li>
+                            <a title="" href="https://line.me/R/ti/p/%40aal2550w" target="_blank"><i class="icon"><u
+                                        class="icon-i_media_line"></u></i></a>
+                        </li>
+                        <li>
+                            <a title="" href="store.html" target="_blank"><i class="icon"><u
+                                        class="icon-i_media_shop"></u></i></a>
+                        </li>
+                        <li>
+                            <a title="" href="" target="_blank"><i class="icon"><u class="icon-i_media_app"></u></i></a>
+                        </li>
+                    </ul>
                 </div>
+                <div class="line_vertical"></div>
+                <div class="areaService">
+                    <h1>CUSTOMER SERVICE</h1>
+                    <div class="info">
+                        <a title="" href="service.html" class="link_underline"><i class="icon"><u
+                                    class="icon-i_comment"></u></i>Contact us</a>
+                        <p>+886 2-2760-6658
+                            <br>週一至週五
+                            <br>09:30 - 12:30
+                            <br>13:30 - 18:30
+                        </p>
+                    </div>
+                </div>
+                <div class="areaSubscribe">
+                    <h1>WEEKLY SUBSCRIBE</h1>
+                    <div class="info"><input class="form-control" type="email" placeholder="EMAIL">
+                        <a title="" href="" class="btn btn-outline-primary">SEND</a>
+                    </div>
+                </div>
+                <div class="areaCopyright">Copyright© 2020 Poly Lulu All Rights Reserved.</div>
             </div>
-            <div class="areaCopyright">Copyright© 2020 Poly Lulu All Rights Reserved.</div>
-        </div>
-    </footer>
+        </footer>
+    </form>
 </body>
 <script src="./Source/js/zh-cht/vendor/jquery-2.2.0.min.js" type="text/javascript"></script>
 <script src="./Source/js/zh-cht/vendor/popper.min.js?20190506"></script>
@@ -487,5 +565,59 @@
 <script src="./Source/js/zh-cht/vendor/jquery.magnific-popup.min.js"></script>
 <script src="./Source/js/zh-cht/vendor/sticky-sidebar.min.js"></script>
 <script src="./Source/js/zh-cht/main.js"></script>
+<script>
+    var shopMoney=10500;//累計消費金額
+    var vipTotalMoney=12000-shopMoney; //升級金額-已消費金額=需再消費的金額
+    var vipData=[shopMoney,vipTotalMoney]
+
+    var thickness = {
+        id: "thickness",
+        beforeDraw: function (chart, options) {
+            let thickness = chart.options.plugins.thickness.thickness;
+            thickness.forEach((item, index) => {
+                chart.getDatasetMeta(0).data[index]._view.innerRadius = item[0];
+                chart.getDatasetMeta(0).data[index]._view.outerRadius = item[1];
+            });
+        }
+    };
+
+    var ctx = document.getElementById("myChart").getContext("2d");
+    var myChart = new Chart(ctx, {
+        type: "doughnut",
+        plugins: [thickness],
+        data: {
+            labels: ["累計消費金額","剩餘金額"],
+            datasets: [
+                {
+                    label: "# of Votes",
+                    data: vipData,
+                    backgroundColor: [
+                        "#ff6b7f",
+                        "#ddd",
+                    ],
+                    borderWidth: 1
+                }
+            ]
+        },
+        
+        options: {
+            plugins: {
+                thickness: {
+                    thickness: [[90, 110], [90, 110]],
+                }
+            },
+            legend: {
+                display: false //This will do the task
+            },
+            tooltips: {enabled: false},
+            hover: {mode: null},
+        },
+    });
+    
+    $('#shopMMM').html(shopMoney);
+    $('#vip_more').html('$'+vipTotalMoney);
+
+
+</script>
 
 </html>

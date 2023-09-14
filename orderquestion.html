@@ -371,18 +371,22 @@
                             </small>
                             </div>
                             <div class="col-lg-8">
-                                <select class="form-control" id="exampleSelect1">
-                                <option value="付款是否成功">付款是否成功</option>
-										<option value="訂單資料有誤">訂單資料有誤</option>
-										<option value="查詢出貨進度">查詢出貨進度</option>
-										<option value="取消訂單">取消訂單</option>
-                                        <option value="商品缺件">商品缺件</option>
-                                        <option value="商品瑕疵/寄錯">商品瑕疵/寄錯</option>
-                                        <option value="會員優惠相關">會員優惠相關</option>
-                                        <option value="退貨申請">退貨申請</option>
-                                        <option value="其他">其他</option>
-                              </select>
-                                <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="請輸入問題內容 ( 200字以內 )"></textarea>
+                                <div><select name="QAList" id="exampleSelect1">
+                                    <option data-qalistid="A" value="訂單相關問題">訂單相關問題</option>
+                                    <option data-qalistid="B" value="售後服務">售後服務</option>
+                                    <option data-qalistid="C" value="會員諮詢">會員諮詢</option>
+                                    <option data-qalistid="D" value="行銷活動優惠相關">行銷活動優惠相關</option>
+                                </select>
+                                    <select name="QAList2" id="exampleSelect2">
+                                    <option data-qalistid2="01" value="是否訂購成功">是否訂購成功</option>
+                                    <option data-qalistid2="02" value="是否付款成功">是否付款成功</option>
+                                    <option data-qalistid2="03" value="更改訂單資料">更改訂單資料</option>
+                                    <option data-qalistid2="04" value="查詢出貨進度">查詢出貨進度</option>
+                                    <option data-qalistid2="05" value="我要追加商品">我要追加商品</option>
+                                    <option data-qalistid2="06" value="我要取消訂購">我要取消訂購</option>
+                                </select></div>
+
+                                <textarea id="exampleTextarea" rows="3" placeholder="請輸入問題內容 ( 200字以內 )" class="form-control"></textarea>
                             </div>
                         </div>
                     </div>

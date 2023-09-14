@@ -1,0 +1,5 @@
+{
+  "Result": null,
+  "Status": { "code": "01", "info": "查無電子優惠券資料" },
+  "Alert": { "title": "取得電子優惠券", "message": "查無電子優惠券資料" }
+}

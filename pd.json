@@ -1,0 +1,176 @@
+{
+    "Result": {
+        "ColorList": [{
+                "ColorID": "A06",
+                "ColorName": "灰",
+                "ColorImg": "https://app-resource.polylulu.com.tw/app_img/91010397/5348AC34-5CB4-4155-95EC-F7E94C21E4CD.jpg",
+                "SizeList": [{
+                        "SizeID": "L",
+                        "SizeTitle": "L",
+                        "StockNum": 10,
+                        "IsKeep": null,
+                        "IsPreOrder": false,
+                        "SellingStatus": 0,
+                        "SellingMsgTitle": "加入購物車",
+                        "SellingMsgBody": ""
+                    },
+                    {
+                        "SizeID": "XL",
+                        "SizeTitle": "XL",
+                        "StockNum": 20,
+                        "IsKeep": null,
+                        "IsPreOrder": true,
+                        "SellingStatus": 2,
+                        "SellingMsgTitle": "我要預購",
+                        "SellingMsgBody": "此商品為預購商品，預計到貨日需7-21日(不含例假日)"
+                    },
+                    {
+                        "SizeID": "2XL",
+                        "SizeTitle": "2XL",
+                        "StockNum": 30,
+                        "IsKeep": null,
+                        "IsPreOrder": true,
+                        "SellingStatus": 2,
+                        "SellingMsgTitle": "我要預購",
+                        "SellingMsgBody": "此商品為預購商品，預計到貨日需7-21日(不含例假日)"
+                    },
+                    {
+                        "SizeID": "3XL",
+                        "SizeTitle": "3XL",
+                        "StockNum": 5,
+                        "IsKeep": null,
+                        "IsPreOrder": true,
+                        "SellingStatus": 2,
+                        "SellingMsgTitle": "我要預購",
+                        "SellingMsgBody": "此商品為預購商品，預計到貨日需7-21日(不含例假日)"
+                    },
+                    {
+                        "SizeID": "4XL",
+                        "SizeTitle": "4XL",
+                        "StockNum": 8,
+                        "IsKeep": null,
+                        "IsPreOrder": true,
+                        "SellingStatus": 2,
+                        "SellingMsgTitle": "我要預購",
+                        "SellingMsgBody": "此商品為預購商品，預計到貨日需7-21日(不含例假日)"
+                    }
+                ],
+                "DefaultPhoto": {
+                    "url": "https://app-resource.polylulu.com.tw/app_img/91010397/419C80C0-FE95-4989-8F54-59A84073CD23.jpg",
+                    "width": 600,
+                    "height": 600,
+                    "photo_type": "03"
+                }
+            },
+            {
+                "ColorID": "A33",
+                "ColorName": "黑",
+                "ColorImg": "https://app-resource.polylulu.com.tw/app_img/91010397/ACEEBC54-C1E2-4F1E-A538-096B5D9CE868.jpg",
+                "SizeList": [{
+                        "SizeID": "L",
+                        "SizeTitle": "L",
+                        "StockNum": 10,
+                        "IsKeep": null,
+                        "IsPreOrder": true,
+                        "SellingStatus": 2,
+                        "SellingMsgTitle": "我要預購",
+                        "SellingMsgBody": "此商品為預購商品，預計到貨日需7-21日(不含例假日)"
+                    },
+                    {
+                        "SizeID": "XL",
+                        "SizeTitle": "XL",
+                        "StockNum": 10,
+                        "IsKeep": null,
+                        "IsPreOrder": true,
+                        "SellingStatus": 2,
+                        "SellingMsgTitle": "我要預購",
+                        "SellingMsgBody": "此商品為預購商品，預計到貨日需7-21日(不含例假日)"
+                    },
+                    {
+                        "SizeID": "2XL",
+                        "SizeTitle": "2XL",
+                        "StockNum": 10,
+                        "IsKeep": null,
+                        "IsPreOrder": true,
+                        "SellingStatus": 2,
+                        "SellingMsgTitle": "我要預購",
+                        "SellingMsgBody": "此商品為預購商品，預計到貨日需7-21日(不含例假日)"
+                    },
+                    {
+                        "SizeID": "3XL",
+                        "SizeTitle": "3XL",
+                        "StockNum": 10,
+                        "IsKeep": null,
+                        "IsPreOrder": true,
+                        "SellingStatus": 2,
+                        "SellingMsgTitle": "我要預購",
+                        "SellingMsgBody": "此商品為預購商品，預計到貨日需7-21日(不含例假日)"
+                    }
+                ],
+                "DefaultPhoto": {
+                    "url": "https://app-resource.polylulu.com.tw/app_img/91010397/656B173F-9D3F-449C-9619-2D0A0C6033E5.jpg",
+                    "width": 600,
+                    "height": 600,
+                    "photo_type": "03"
+                }
+            },
+            {
+                "ColorID": "B31",
+                "ColorName": "磚紅",
+                "ColorImg": "https://app-resource.polylulu.com.tw/app_img/91010397/181F3A28-22E6-42A7-BB27-A0B69827D4E1.jpg",
+                "SizeList": [{
+                        "SizeID": "L",
+                        "SizeTitle": "L",
+                        "StockNum": 10,
+                        "IsKeep": null,
+                        "IsPreOrder": true,
+                        "SellingStatus": 2,
+                        "SellingMsgTitle": "我要預購",
+                        "SellingMsgBody": "此商品為預購商品，預計到貨日需7-21日(不含例假日)"
+                    },
+                    {
+                        "SizeID": "XL",
+                        "SizeTitle": "XL",
+                        "StockNum": 10,
+                        "IsKeep": null,
+                        "IsPreOrder": true,
+                        "SellingStatus": 2,
+                        "SellingMsgTitle": "我要預購",
+                        "SellingMsgBody": "此商品為預購商品，預計到貨日需7-21日(不含例假日)"
+                    },
+                    {
+                        "SizeID": "2XL",
+                        "SizeTitle": "2XL",
+                        "StockNum": 10,
+                        "IsKeep": null,
+                        "IsPreOrder": true,
+                        "SellingStatus": 2,
+                        "SellingMsgTitle": "我要預購",
+                        "SellingMsgBody": "此商品為預購商品，預計到貨日需7-21日(不含例假日)"
+                    },
+                    {
+                        "SizeID": "3XL",
+                        "SizeTitle": "3XL",
+                        "StockNum": 10,
+                        "IsKeep": null,
+                        "IsPreOrder": true,
+                        "SellingStatus": 2,
+                        "SellingMsgTitle": "我要預購",
+                        "SellingMsgBody": "此商品為預購商品，預計到貨日需7-21日(不含例假日)"
+                    }
+                ],
+                "DefaultPhoto": {
+                    "url": "https://app-resource.polylulu.com.tw/app_img/91010397/D1B1C184-E702-406B-AD79-EEFF03880BEC.jpg",
+                    "width": 600,
+                    "height": 600,
+                    "photo_type": "03"
+                }
+            }
+        ]
+    },
+    "Status": {
+        "code": "00",
+        "info": ""
+    },
+    "Alert": null
+}

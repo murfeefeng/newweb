@@ -1,0 +1,79 @@
+body {
+    background-color: #fff;
+}
+
+.loginCenter {
+    /* background: url(https://photo.polylulu.com.tw/photo/act/event/20230111/lottery.jpg) repeat-y center -50px; */
+}
+
+.loginCenter .lotteryBox {
+    background: url(https://photo.polylulu.com.tw/photo/act/event/20230111/lottery.jpg) repeat-y center -80px;
+    width: 400px;
+    padding: 35px;
+    padding-top: 297px;
+    margin: 0 auto;
+}
+
+.loginCenter .lotteryBox:first-child:after {
+    content: "";
+    display: none;
+}
+
+.loginCenter .lotteryBox .form-group {
+    margin-bottom: 0.5em;
+}
+
+.loginCenter .lotteryBox input {
+    border: 0;
+    background-color: #fff;
+    /* border: 1px solid #f00; */
+}
+
+.loginCenter .lotteryBox .btn {
+    background-color: #eac35c;
+    border: 1px solid #eac35c;
+    color: black;
+    font-weight: bold;
+    opacity: 1;
+    margin-top: 10px;
+}
+
+.loginCenter .lotteryBox .btn:hover {
+    filter: brightness(1.2);
+}
+
+.loginCenter .lotteryBox .form_icon {
+    color: #fff
+}
+.loginCenter .lotteryBox .error{
+    color:#eac35c !important;
+}
+@media (max-width: 1199px){
+    
+    .loginCenter .lotteryBox{
+        width: 400px;
+        margin-top: -30px;
+    }
+}
+@media (max-width: 991.98px){
+    .loginCenter{
+        margin-top: 130px;
+    }
+    .loginCenter .lotteryBox{
+        margin-top:42px;
+    }
+}
+@media (max-width: 768px){
+    .loginCenter{
+        margin-top: 140px;
+    }
+}
+@media (max-width: 575px){
+    .loginCenter {
+        margin-bottom: 0;
+    }
+    .loginCenter .lotteryBox{
+        width: 100%;
+        margin-bottom: 0;
+    }
+}
